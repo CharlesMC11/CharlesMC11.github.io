@@ -1,0 +1,97 @@
+---
+layout: page
+title: resume
+permalink: resume
+order: 1
+---
+
+<h1 style="text-align: center">
+  <a href="https://drive.google.com/uc?export=download&id=1LnkBBzDZNCbmOx7_h44X_RzY73pyrNo9">
+    pdf download
+  </a>
+</h1>
+
+<h2>{{ "Experience" | upcase }}:</h2>
+  <ul>
+    {% for exp in site.data.experience %}
+      <h3>{{ exp.place }}</h3>
+      <h4>{{ exp.role }} ({{ exp.start }}–{{ exp.end }})</h4>
+      <ul>
+        {% for t in exp.tasks -%}
+          <li style="list-style: disc;">
+              {{ t }}
+          </li>
+
+        {% endfor %}
+      </ul>
+
+    {% endfor %}
+  </ul>
+
+<h2>{{ "Projects" | upcase }}:</h2>
+  <ul>
+    {% for proj in site.data.projects %}
+      {% if proj.link %}
+        {% capture name -%}
+          <a href="{{ proj.link }}">{{ proj.name }}</a>
+        {%- endcapture %}
+      {% else %}
+        {% assign name = proj.name %}
+      {% endif %}
+
+      {% if proj.start == proj.end %}
+        {% assign date = proj.start %}
+      {% else %}
+        {% capture date -%}
+          {{ proj.start }}–{{ proj.end }}
+        {%- endcapture %}
+      {% endif %}
+
+      <h3><i>{{ name }}</i> {{ proj.type }}</h3>
+      <h4>{{ proj.role }} ({{ date }})</h4>
+      <ul>
+        {% for t in proj.tasks -%}
+        <li style="list-style: disc;">
+          {{ t }}
+        </li>
+        {% endfor %}
+      </ul>
+
+    {% endfor %}
+  </ul>
+
+<h2>{{ "Skills" | upcase }}:</h2>
+  <ul>
+    {% for skill in site.data.skills %}
+      <li style="list-style: none;">
+        {{ skill.category }}:
+
+        {% assign skills = skill.skills %}
+        {% assign lastItem = skills | last %}
+
+        {% for s in skills %}
+          {{ s }}
+
+          {%- if s != lastItem -%}
+            ,
+          {% endif %}
+        {% endfor %}
+      </li>
+
+    {% endfor %}
+  </ul>
+
+<h2>{{ "Education" | upcase }}:</h2>
+  <ul>
+    {% for edu in site.data.education %}
+      <h3>{{ edu.institution }}</h3>
+      <ul>
+        {% for c in edu.concentrations -%}
+        <li style="list-style: disc;">
+          {{ c.degree_major }}, <i>{{ c.award }}</i>
+        </li>
+        {% endfor %}
+      </ul>
+
+    {% endfor %}
+  </ul>

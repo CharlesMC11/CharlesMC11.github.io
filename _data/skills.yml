@@ -1,0 +1,37 @@
+- category: Technical
+  skills:
+    - Programming
+    - Rigging
+    - Animation
+    - Shading
+    - 3D modeling
+    - Lighting
+    - Photography
+
+- category: Software
+  skills:
+    - Maya
+    - Arnold Renderer
+    - Blender
+    - Houdini
+    - ZBrush
+    - Harmony
+    - Capture One Pro
+    - Visual Studio Code
+
+- category: Adobe
+  skills:
+    - Substance 3D Painter
+    - Photoshop
+    - Premiere Pro
+    - After Effects
+    - Lightroom Classic
+
+- category: Languages
+  skills:
+    - Python
+    - C++
+    - Zsh
+    - Maya Embedded Language
+    - Tagalog
+    - English

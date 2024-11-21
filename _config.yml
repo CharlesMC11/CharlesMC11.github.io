@@ -1,0 +1,65 @@
+theme: minima
+
+title: Charles Mesa Cayobit
+description: technical artist | 3d generalist
+url: http://charlesmc-tech.art
+baseurl:
+
+taglong: technical artist | 3d generalist
+tagshort: technical artist | 3d generalist
+
+# author: Charles Mesa Cayobit
+email: charlesmesacayobit@gmail.com
+photo: assets/me_web.png
+
+linkedin_username: charlesmesacayobit
+github_username: charlesmc-techart
+instagram_username: charlesmc.techart
+
+# Build settings
+# plugins:
+#   - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+collections:
+  3d_work:
+    output: false
+    order:
+      - reconnection.md
+      - a_trace.md
+      - kikis_bakery.md
+      - jet-jacked.md
+      - misc.md
+
+  photography:
+    output: false
+    order:
+      - personal.md
+      - events.md
+
+  resume:
+    output: true
+    order:
+      - experience.html
+      - projects.html
+      - skills.html
+      - education.html

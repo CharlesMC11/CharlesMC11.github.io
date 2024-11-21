@@ -1,0 +1,53 @@
+- role: Programmer
+  name: Spirit Driver
+  type: Visual Novel
+  link: http://noodledonut.itch.io/spirit-driver
+  start: Sep ’24
+  end: Sep ’24
+  tasks:
+    - Assisted in R&D for main menu arrangement and sprite animation
+
+- role: Pipeline Technical Director
+  name: re:connection
+  type: 3D Animated Short Film
+  link: http://re-connection.carrd.co
+  start: Jan ’24
+  end: May ’24
+  tasks:
+    - Sped up lighting and rendering pipeline by 80% by developing scripts for exporting and importing assets to and from the proper GDrive folders
+    - Troubleshot technical problems the artists encountered during production
+
+- role: Technical Assistance
+  name: My Turn!
+  type: 2D Animated Short Film
+  link: http://www.kickstarter.com/projects/myturnshortfilm/my-turn
+  start: Jan ’24
+  end: May ’24
+  tasks:
+    - Wrote a script for exporting frames from Harmony to the proper shot folders on GDrive
+
+- role: Technical & Rigging Lead, Producer, Animator
+  name: A Trace
+  type: 3D Animated Short Film
+  link: http://linktr.ee/atraceshortfilm
+  start: Jun ’22
+  end: May ’23
+  tasks:
+    - Provided solutions for technical challenges the core team of 10 artists encountered
+    - Enhanced team’s workflow by authoring scripts for tedious and repetitive tasks
+    - Led R&D for rigging a flat, paper character and 4 props across 9 months
+    - Optimized render settings, co-wrote a guide, and coached the team to set up renders
+    - Co-created a timeline spreadsheet for rendering and compositing all 54 shots of the film
+    - Contributed character animation for a shot within 3 weeks
+
+- role: Technical Lead, Rigger, Animator, Modeler
+  name: Kiki’s Bakery
+  type: 3D Model Recreation
+  link: http://vimeo.com/795348460?share=copy
+  start: Nov ’22
+  end: Dec ’22
+  tasks:
+    - Rigged and animated a prop, scene lights, and a camera within a week
+    - Sculpted, textured, rigged, and animated a stylized cat across 5 weeks
+    - Reduced rendering time nearly by 50% by providing methods to optimize scene
+    - Troubleshot technical issues related to 3D modeling and rendering
