@@ -67,12 +67,12 @@ order: 1
         {{ skill.category }}:
 
         {% assign skills = skill.skills %}
-        {% assign lastItem = skills | last %}
+        {% assign lastitem = skills | last %}
 
         {% for s in skills %}
           {{ s }}
 
-          {%- if s != lastItem -%}
+          {%- if s != lastitem -%}
             ,
           {% endif %}
         {% endfor %}
