@@ -2,9 +2,17 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | sort: "order" | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ '/' | relative_url }}">
-      {{ site.title | upcase | escape }}
-    </a>
+    <ul class="site-heading">
+      <li>
+        <a class="site-name" rel="author" href="{{ '/' | relative_url }}">
+          {{ site.title | upcase | escape }}
+        </a>
+      </li>
+      <li class="site-title">
+          {{ site.description | downcase | escape }}
+      </li>
+
+    </ul>
 
     {%- if page_paths -%}
       <nav class="site-nav">
