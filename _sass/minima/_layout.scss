@@ -129,21 +129,16 @@
   padding: $spacing-unit 0;
 }
 
-.footer-heading {
-  @include relative-font-size(1.125);
-}
-
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
 .footer-col-wrapper {
-  @include relative-font-size(0.9375);
+  @include relative-font-size(0.9);
   text-align: center;
   color: $grey-color;
   @extend %clearfix;
+}
+
+.contact-list {
+  list-style: none;
+  margin-left: 0;
 }
 
 @include media-query($on-laptop) {
