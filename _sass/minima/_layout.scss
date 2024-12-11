@@ -93,17 +93,17 @@
       padding-top: 10px;
       text-align: center;
 
-      > svg {
+      >svg {
         fill: $grey-color-dark;
       }
     }
 
-    input ~ .trigger {
+    input~.trigger {
       clear: both;
       display: none;
     }
 
-    input:checked ~ .trigger {
+    input:checked~.trigger {
       display: block;
       padding-bottom: 5px;
     }
@@ -176,7 +176,7 @@
   margin-left: 0;
   list-style: none;
 
-  > li {
+  >li {
     margin-bottom: $spacing-unit;
   }
 }
@@ -199,12 +199,11 @@
 }
 
 .post-title {
-  @include relative-font-size(2.625);
-  letter-spacing: -1px;
+  @include relative-font-size(1.75);
   line-height: 1;
 
   @include media-query($on-laptop) {
-    @include relative-font-size(2.25);
+    @include relative-font-size(1.5);
   }
 }
 
@@ -212,18 +211,18 @@
   margin-bottom: $spacing-unit;
 
   h2 {
-    @include relative-font-size(2);
+    @include relative-font-size(1.5);
 
     @include media-query($on-laptop) {
-      @include relative-font-size(1.75);
+      @include relative-font-size(1.375);
     }
   }
 
   h3 {
-    @include relative-font-size(1.625);
+    @include relative-font-size(1.375);
 
     @include media-query($on-laptop) {
-      @include relative-font-size(1.375);
+      @include relative-font-size(1.25);
     }
   }
 

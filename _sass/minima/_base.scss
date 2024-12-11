@@ -25,8 +25,7 @@ figure {
  * Basic styling
  */
 body {
-  font: $base-font-weight #{$base-font-size}/#{$base-line-height}
-    $base-font-family;
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;
   background-color: $background-color;
   -webkit-text-size-adjust: 100%;
@@ -79,7 +78,7 @@ img {
 /**
  * Figures
  */
-figure > img {
+figure>img {
   display: block;
 }
 
@@ -96,8 +95,9 @@ ol {
 }
 
 li {
-  > ul,
-  > ol {
+
+  >ul,
+  >ol {
     margin-bottom: 0;
   }
 }
@@ -166,7 +166,7 @@ pre {
   padding: 8px 12px;
   overflow-x: auto;
 
-  > code {
+  >code {
     border: 0;
     padding-right: 0;
     padding-left: 0;
