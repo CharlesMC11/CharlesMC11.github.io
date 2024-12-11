@@ -30,7 +30,7 @@
   line-height: $base-line-height * $base-font-size * 2.25;
 
   .nav-trigger {
-      display: none;
+    display: none;
   }
 
   .menu-icon {
@@ -96,12 +96,11 @@
       &:not(:last-child) {
         margin-right: 0;
       }
+
       margin-left: 20px;
     }
   }
 }
-
-
 
 /**
  * Site footer
@@ -128,11 +127,10 @@
   @extend %clearfix;
 }
 
-
 @include media-query($on-laptop) {
   .footer-col {
     width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
+    width: calc(50% - (#{$spacing-unit} / 2));
   }
 }
 
@@ -140,7 +138,7 @@
   .footer-col {
     float: none;
     width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
+    width: calc(100% - (#{$spacing-unit} / 2));
   }
 }
 
@@ -178,8 +176,6 @@
   display: block;
   @include relative-font-size(1.5);
 }
-
-
 
 /**
  * Posts
