@@ -24,7 +24,7 @@
   start: Jan ’24
   end: May ’24
   tasks:
-    - Wrote a script for exporting frames from Harmony to the proper shot folders on GDrive
+    - Wrote a script for rendering Harmony scenes via CLI, saving to the proper GDrive folders
 
 - role: Technical & Rigging Lead, Producer, Animator
   name: A Trace
