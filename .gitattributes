@@ -1,0 +1,8 @@
+*      text=auto
+
+*.css  text diff=css
+*.html text diff=html     linguist-language=django
+*.md   text diff=markdown
+*.py   text diff=python
+
+.git*  text

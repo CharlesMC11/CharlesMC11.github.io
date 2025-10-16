@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8"/>
+  <title>Charles Mesa Cayobit</title>
+  <link rel="stylesheet" href="{% static 'portfolio/style.css' %}"/>
+</head>
+
+<body>
+<header>
+  <h1>Charles Mesa Cayobit</h1>
+
+  <nav>
+    <a href="/">Demo Reel</a>
+    <nav>
+      <a href="/projects/">Projects</a>
+    </nav>
+    <a href="/resume/">Resumé</a>
+    <a href="/about/">About</a>
+  </nav>
+</header>
+
+<main>
+  {% block content %}{% endblock content %}
+</main>
+
+<footer>
+  <nav>
+    <a class="navbar-item" href="mailto:charlesmesacayobit@gmail.com">Mail</a>
+    <a class="navbar-item" href="https://www.linkedin.com/in/charlesmesacayobit">LinkedIn</a>
+    <a class="navbar-item" href="https://github.com/CharlesMC11">GitHub</a>
+    <a class="navbar-item" href="https://instagram.com/charlesmc.techart">Instagram</a>
+  </nav>
+  <div>Made with Django.</div>
+</footer>
+
+</body>
+</html>

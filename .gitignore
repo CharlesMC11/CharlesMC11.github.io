@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv
+
+*.png
+
+.ruff_cache/
+
+.idea/
+.vscode/
+
+.DS_Store
