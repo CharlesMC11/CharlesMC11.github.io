@@ -1,5 +1,8 @@
 *      text=auto
 
+*.html text diff=html     linguist-language=Liquid
 *.md   text diff=markdown
+*.scss text diff=css
+*.yml  text
 
 .git*  text
