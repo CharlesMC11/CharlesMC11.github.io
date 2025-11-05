@@ -1,0 +1,19 @@
+<section>
+  <h2 class="cv__heading">Skills</h2>
+
+  <ul class="cv__skills">
+    {% for category, skills in skills.items %}
+      <li>
+        <h3 class="cv__subheading cv__skill-category">{{ category.name }}</h3>
+
+        <ul>
+          {% for skill in skills %}
+            {% if skill.is_active %}
+              <li class="cv__sub-subheading cv__skill">{{ skill }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

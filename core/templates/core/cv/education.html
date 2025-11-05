@@ -1,0 +1,31 @@
+<section>
+  <h2 class="cv__heading">Education</h2>
+
+  <ul>
+    {% for school, concentrations in education.items %}
+      <li>
+        <h3 class="cv__subheading cv__school-name">{{ school.name }}</h3>
+
+        <ul>
+          {% for concentration in concentrations %}
+            <li class="cv__sub-subheading">{{ concentration }}
+              <span class="cv__date-container">
+                <span class="cv__exp-date">
+                  {% spaceless %}
+                    {% with awarded=concentration.awarded|date:"M ’y" %}
+                      {% if awarded == 'Dec ’99' %}
+                        Present
+                      {% else %}
+                        {{ awarded }}
+                      {% endif %}
+                    {% endwith %}
+                  {% endspaceless %}
+                </span>
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv
+
+*.png
+*.sqlite3
+
+.ruff_cache/
+
+.idea/
+.vscode/
+
+.DS_Store
+
+static/

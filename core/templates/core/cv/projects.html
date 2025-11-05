@@ -1,0 +1,47 @@
+<section>
+  <h2 class="cv__heading">Projects</h2>
+
+  <ul>
+    {% for project, roles in projects.items %}
+      <li>
+        <h3 class="cv__subheading cv__exp">
+          <cite>{% spaceless %}
+            {% if project.link %}
+              <a href="{{ project.link }}">{{ project.name }}</a>
+            {% else %}
+              {{ project.name }}
+            {% endif %}
+          {% endspaceless %}</cite>&nbsp;<span>{{ project.type }}</span>
+        </h3>
+
+        <ul>
+          {% for role, highlights in roles.items %}
+            <li>
+              <h4 class="cv__sub-subheading cv__exp-role">{{ role.roles }}
+                <span class="cv__date-container">
+                  <span class="cv__exp-date">{{ role.start_date|date:"M ’y" }}</span>–<span
+                  class="cv__exp-date">{% spaceless %}
+                  {% with end_date=role.end_date|date:"M ’y" %}
+                    {% if end_date == 'Dec ’99' %}
+                      Present
+                    {% else %}
+                      {{ end_date }}
+                    {% endif %}
+                  {% endwith %}
+                {% endspaceless %}</span></span>
+              </h4>
+
+              {% if highlights %}
+                <ul>
+                  {% for highlight in highlights %}
+                    <li class="cv__exp-highlight">{{ highlight }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

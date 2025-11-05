@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% block content %}
+  <article class="cv">
+    {% if experience %}
+      {% include "core/cv/experience.html" %}
+    {% endif %}
+
+    {% if projects %}
+      {% include "core/cv/projects.html" %}
+    {% endif %}
+
+    {% if skills %}
+      {% include "core/cv/skills.html" %}
+    {% endif %}
+
+    {% if education %}
+      {% include "core/cv/education.html" %}
+    {% endif %}
+  </article>
+{% endblock content %}

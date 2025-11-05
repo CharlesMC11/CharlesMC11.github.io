@@ -1,0 +1,30 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.html]
+indent_size = 2
+insert_final_newline = false
+
+ij_html_enforce_quotes = true
+ij_html_quote_style = double
+
+[*.py]
+indent_size = 4
+max_line_length = 79
+
+ij_python_optimize_imports_sort_names_in_from_imports = true
+
+[.editorconfig]
+ij_editorconfig_align_group_field_declarations = false
+ij_editorconfig_space_after_colon = false
+ij_editorconfig_space_after_comma = true
+ij_editorconfig_space_before_colon = false
+ij_editorconfig_space_before_comma = false
+ij_editorconfig_spaces_around_assignment_operators = true

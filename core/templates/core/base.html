@@ -1,0 +1,116 @@
+{% load static %}{% spaceless %}
+  <!DOCTYPE html>
+  <html lang="en-US">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="Charles Mesa Cayobit"/>
+    <title>Charles Mesa Cayobit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ebd1029440.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}"/>
+  </head>
+
+  <body>
+  <header class="header">
+    <section class="brand">
+      <h1 class="brand__name courier-prime-bold">Charles Mesa Cayobit</h1>
+      <h2 class="brand__title">
+        Programmer | Technical Artist | 3D Generalist | Photographer
+      </h2>
+    </section>
+    <nav class="navbar--header">
+      <ul class="navbar">
+        <li class="navbar__item dropdown__button">
+          <a class="navbar__link" href="/3d/">3D Work</a>
+          <ul class="dropdown">
+            <li class="dropdown__item">
+              <a class="dropdown__link" href="/reconnection/"
+              >re:connection</a
+              >
+            </li>
+            <li class="dropdown__item">
+              <a class="dropdown__link" href="/atrace/">A Trace</a>
+            </li>
+            <li class="dropdown__item">
+              <a class="dropdown__link" href="/kikisbakery/">Kiki’s Bakery</a>
+            </li>
+            <li class="dropdown__item">
+              <a class="dropdown__link" href="/jetjacked/">Jet-Jacked</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar__item">
+          <a class="navbar__link" href="/photo/">Photography</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="/cv/">Curriculum Vitae</a>
+        </li>
+        <li class="navbar__item">
+          <a class="navbar__link" href="/about/">About Me</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>{% block content %}{% endblock content %}</main>
+
+  <footer class="footer">
+    <ul class="navbar navbar--footer">
+      <li class="navbar__item">
+        <a
+          class="navbar__link"
+          href="mailto:charlesmesacayobit@gmail.com"
+          title="Send Charles an email"
+        >
+          <i class="fa-solid fa-envelope"></i
+          ></a>
+      </li>
+
+      <li class="navbar__item">
+        <a
+          class="navbar__link"
+          href="https://www.linkedin.com/in/charlesmesacayobit"
+          title="Open LinkedIn in a new tab"
+          target="_blank"
+        ><i class="fa-brands fa-linkedin"></i
+        ></a>
+      </li>
+
+      <li class="navbar__item">
+        <a
+          class="navbar__link"
+          href="https://github.com/CharlesMC11"
+          title="Open GitHub in a new tab"
+          target="_blank"
+        >
+          <i class="fa-brands fa-github-alt"></i
+          ></a>
+      </li>
+
+      <li class="navbar__item">
+        <a
+          class="navbar__link"
+          href="https://instagram.com/charlesmc.techart"
+          title="Open Instagram in a new tab"
+          target="_blank"
+        >
+          <i class="fa-brands fa-instagram"></i
+          ></a>
+      </li>
+    </ul>
+
+    <p>Made with Django.</p>
+  </footer>
+  </body>
+  </html>
+{% endspaceless %}

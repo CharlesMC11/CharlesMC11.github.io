@@ -1,0 +1,39 @@
+<section>
+  <h2 class="cv__heading">Experience</h2>
+
+  <ul>
+    {% for employer, positions in experience.items %}
+      <li>
+        <h3 class="cv__subheading">{{ employer.name }}</h3>
+
+        <ul>
+          {% for position, highlights in positions.items %}
+            <li>
+              <h4 class="cv__sub-subheading cv__exp-role">{{ position.name }}
+                <span class="cv__date-container">
+                  <span class="cv__exp-date">{{ position.start_date|date:"M ’y" }}</span>–<span
+                  class="cv__exp-date">{% spaceless %}
+                  {% with end_date=position.end_date|date:"M ’y" %}
+                    {% if end_date == 'Dec ’99' %}
+                      Present
+                    {% else %}
+                      {{ end_date }}
+                    {% endif %}
+                  {% endwith %}
+                {% endspaceless %}</span></span>
+              </h4>
+
+              {% if highlights %}
+                <ul>
+                  {% for highlight in highlights %}
+                    <li class="cv__exp-highlight">{{ highlight }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
