@@ -15,5 +15,5 @@ class Skill(NamedEntity):
     is_active = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ["order", 'subcategory']
+        ordering = ["order", "subcategory"]
         verbose_name_plural = "SKL - Skills"
