@@ -11,7 +11,8 @@
             <li>
               <h4 class="cv__sub-subheading cv__exp-role">{{ position.name }}
                 <span class="cv__date-container">
-                  <span class="cv__exp-date">{{ position.start_date|date:"M ’y" }}</span>–<span
+                  <span
+                    class="cv__exp-date">{{ position.start_date|date:"M ’y" }}</span>–<span
                   class="cv__exp-date">{% spaceless %}
                   {% with end_date=position.end_date|date:"M ’y" %}
                     {% if end_date == 'Dec ’99' %}

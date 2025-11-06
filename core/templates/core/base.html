@@ -67,50 +67,56 @@
   <footer class="footer">
     <ul class="navbar navbar--footer">
       <li class="navbar__item">
-        <a
-          class="navbar__link"
-          href="mailto:charlesmesacayobit@gmail.com"
-          title="Send Charles an email"
-        >
-          <i class="fa-solid fa-envelope"></i
-          ></a>
+        <a class="navbar__link" href="/cv/">Curriculum Vitae</a>
       </li>
-
       <li class="navbar__item">
-        <a
-          class="navbar__link"
-          href="https://www.linkedin.com/in/charlesmesacayobit"
-          title="Open LinkedIn in a new tab"
-          target="_blank"
-        ><i class="fa-brands fa-linkedin"></i
-        ></a>
-      </li>
-
-      <li class="navbar__item">
-        <a
-          class="navbar__link"
-          href="https://github.com/CharlesMC11"
-          title="Open GitHub in a new tab"
-          target="_blank"
-        >
-          <i class="fa-brands fa-github-alt"></i
-          ></a>
-      </li>
-
-      <li class="navbar__item">
-        <a
-          class="navbar__link"
-          href="https://instagram.com/charlesmc.techart"
-          title="Open Instagram in a new tab"
-          target="_blank"
-        >
-          <i class="fa-brands fa-instagram"></i
-          ></a>
+        <a class="navbar__link" href="/about/">About Me</a>
       </li>
     </ul>
+  </nav>
+</header>
 
-    <p>Made with Django.</p>
-  </footer>
-  </body>
-  </html>
-{% endspaceless %}
+<main>{% block content %}{% endblock content %}</main>
+
+<footer class="footer">
+  <ul class="navbar navbar--footer">
+    <li class="navbar__item">
+      <a class="navbar__link"
+         href="mailto:charlesmesacayobit@gmail.com"
+         title="Send an email to Charles Mesa Cayobit">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link"
+         href="https://www.linkedin.com/in/charlesmesacayobit"
+         title="Open LinkedIn in a new tab"
+         target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link"
+         href="https://github.com/CharlesMC11"
+         title="Open GitHub in a new tab"
+         target="_blank">
+        <i class="fa-brands fa-github-alt"></i>
+      </a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link"
+         href="https://instagram.com/charlesmc.techart"
+         title="Open Instagram in a new tab"
+         target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+    </li>
+  </ul>
+
+  <p>Made with Django.</p>
+</footer>
+</body>
+</html>
