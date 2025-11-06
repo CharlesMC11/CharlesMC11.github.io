@@ -28,11 +28,9 @@ def photography(request):
 
 
 def cv(request):
-    def get_experience_descriptions(
+    def get_highlights(
         primary_model: Model, secondary_model: Model, tertiary_model: Model
     ) -> dict[Model, dict[Model, list[Model]]]:
-        """"""
-
         def get_reverse_many_to_one_descriptor_str(model: Model) -> str:
             """Get the reverse many-to-one descriptor of a model.
 
@@ -81,12 +79,10 @@ def cv(request):
 
     experience: dict[
         Employer, dict[JobPosition, list[JobPositionHighlight]]
-    ] = get_experience_descriptions(Employer, JobPosition, JobPositionHighlight)
+    ] = get_highlights(Employer, JobPosition, JobPositionHighlight)
 
     projects: dict[Project, dict[ProjectRoles, list[ProjectRolesHighlight]]] = (
-        get_experience_descriptions(
-            Project, ProjectRoles, ProjectRolesHighlight
-        )
+        get_highlights(Project, ProjectRoles, ProjectRolesHighlight)
     )
 
     skills_query = SkillCategory.objects.prefetch_related("skill_set")
