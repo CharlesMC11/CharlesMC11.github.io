@@ -1,23 +1,23 @@
-{% load static %}{% spaceless %}
-  <!DOCTYPE html>
-  <html lang="en-US">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="Charles Mesa Cayobit"/>
-    <title>Charles Mesa Cayobit</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/ebd1029440.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="{% static 'core/style.css' %}"/>
-  </head>
+{% load static %}<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="author" content="Charles Mesa Cayobit"/>
+  <title>Charles Mesa Cayobit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/ebd1029440.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="{% static 'core/css/base.css' %}"/>
+  {% block head %}{% endblock head %}
+</head>
 
   <body>
   <header class="header">

@@ -1,0 +1,16 @@
+.about-me {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+}
+
+.about-me__copy {
+    line-height: var(--primary-line-height);
+}
+
+.about-me__heading {
+    font-size: calc(var(--primary-font-size) * 1.5);
+    padding: var(--primary-padding);
+    box-sizing: border-box;
+}
+
