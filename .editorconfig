@@ -2,24 +2,30 @@
 
 root = true
 
+
 [*]
 charset = utf-8
 indent_style = space
 insert_final_newline = true
+max_line_length = 79
 trim_trailing_whitespace = true
+
+
+[{*.css,*.html}]
+insert_final_newline = false
+
 
 [*.html]
 indent_size = 2
-insert_final_newline = false
-
 ij_html_enforce_quotes = true
 ij_html_quote_style = double
 
+
 [*.py]
 indent_size = 4
-max_line_length = 79
 
 ij_python_optimize_imports_sort_names_in_from_imports = true
+
 
 [.editorconfig]
 ij_editorconfig_align_group_field_declarations = false
