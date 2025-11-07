@@ -7,5 +7,5 @@ urlpatterns = (
     path("3d/", views.three_d, name="3d"),
     path("photo/", views.photography, name="photography"),
     path("cv/", views.cv, name="cv"),
-    path("about/", views.about, name="about"),
+    path("about-me/", views.about_me, name="about-me"),
 )

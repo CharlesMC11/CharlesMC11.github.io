@@ -120,5 +120,5 @@ def cv(request):
     return render(request, "core/cv/base.html", context)
 
 
-def about(request):
-    return render(request, "core/about.html")
+def about_me(request):
+    return render(request, "core/about-me.html")
