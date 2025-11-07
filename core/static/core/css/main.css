@@ -83,7 +83,8 @@ header {
 
 main {
     grid-area: main;
-    max-width: var(--max-content-width);
+    /*max-width: var(--max-content-width);*/
+    max-width: 80ch;
     min-height: 50vh;
     padding: calc(var(--primary-padding) * 4);
     place-self: center center;
@@ -103,6 +104,10 @@ p {
 
     gap: var(--primary-padding);
     padding: calc(var(--primary-padding) * 2);
+}
+
+.brand {
+    text-decoration: none;
 }
 
 .brand h1 {
@@ -178,30 +183,6 @@ p {
     display: flex;
     place-items: center center;
     place-content: center center;
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.navbar--footer .navbar__link:hover {
-    color: var(--primary-color-light);
-}
-
-.navbar--header .navbar__item:hover {
-    background-color: var(--primary-color-dark);
-}
-
-.navbar__item {
-    list-style: none;
-    padding: var(--button-padding);
-}
-
-.navbar__link {
-    color: var(--secondary-color);
-    text-decoration: none;
 }
 
 /* APIs ----------------------------------------------------------------------*/

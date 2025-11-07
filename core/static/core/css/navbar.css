@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar--footer .navbar__link:hover {
+    color: var(--primary-color-light);
+}
+
+.navbar--header .navbar__item:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.navbar__item {
+    list-style: none;
+    padding: var(--button-padding);
+}
+
+.navbar__link {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
