@@ -174,21 +174,16 @@ p {
     color: var(--secondary-color);
 }
 
-.dropdown__link {
-    color: var(--primary-color-dark);
-    text-decoration: none;
-}
+/* About Me -----------------------------------------------------------------*/
 
-.img-container {
+#about-me {
+    align-items: center;
     display: flex;
-    place-items: center center;
-    place-content: center center;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-around;
 }
 
-/* APIs ----------------------------------------------------------------------*/
-
-.courier-prime-bold {
-    font-family: "Courier Prime", monospace;
-    font-weight: 700;
-    font-style: normal;
+#about-me img {
+    width: 512px;
 }
