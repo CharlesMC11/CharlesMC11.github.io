@@ -26,164 +26,224 @@
     --tertiary-color-light: hsl(from var(--tertiary-color) h calc(s / 3) 95%);
 }
 
-* {
-    font-family: -apple-system, Helvetica, Arial, sans-serif, "Apple Color Emoji";
-    font-size: var(--primary-font-size);
-    margin: 0;
-    padding: 0;
+/* Start APIs ---------------------------------------------------------------*/
+
+.courier-prime-bold {
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* End APIs -----------------------------------------------------------------*/
+
+html {
     scrollbar-gutter: stable;
 }
 
 body {
+    align-items: center;
     background-color: var(--secondary-color-dark);
-    display: grid;
-    grid-template-areas:
-    "header header header"
-    "left main right"
-    "footer footer footer";
-    place-self: center;
-    justify-content: stretch;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, Helvetica, Arial, sans-serif, "Apple Color Emoji";
+    gap: 5vh;
+    margin: 0;
 }
 
-@media screen and (max-width: var(--mobile-screen-width)) {
-    :root {
-        --primary-font-size: 10pt;
-    }
-
-    body {
-        grid-template-areas:
-      "header"
-      "main"
-      "footer";
-    }
-}
-
-footer {
-    box-shadow: 0 100vh 0 100vh var(--primary-color);
-    grid-area: footer;
-    padding: var(--primary-padding);
-}
-
-footer p {
-    font-size: 0.75em;
-    min-font-size: 11pt;
-}
-
-footer,
-header {
+header, footer {
+    align-items: center;
     background-color: var(--primary-color);
     color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    z-index: 10;
+    width: 100%;
 }
-
-header {
-    grid-area: header;
-}
-
-main {
-    grid-area: main;
-    /*max-width: var(--max-content-width);*/
-    max-width: 80ch;
-    min-height: 50vh;
-    padding: calc(var(--primary-padding) * 4);
-    place-self: center center;
-    place-content: center space-around;
-}
-
-p {
-    padding: var(--primary-padding);
-}
-
-/* Classes ------------------------------------------------------------------ */
-
 
 .brand {
-    color: var(--primary-color);
     background-color: var(--secondary-color-dark);
-
-    gap: var(--primary-padding);
-    padding: calc(var(--primary-padding) * 2);
+    width: 100%;
 }
 
-.brand {
+.brand * {
+    color: var(--primary-color-dark);
     text-decoration: none;
 }
 
 .brand h1 {
-    font-size: var(--brand-title-font-size);
-    text-transform: uppercase;
+    font-size: xxx-large;
+    margin-bottom: 0.5rem;
 }
 
-
 .brand h2 {
-    font-size: var(--brand-subtitle-font-size);
-    font-weight: lighter;
+    font-size: large;
+    margin-top: 0;
     text-transform: lowercase;
 }
 
-
-@media screen and (max-width: var(--mobile-screen-width)) {
-    .brand h1 {
-        font-size: calc(var(--brand-title-font-size) / 2);
-    }
-
-    .brand h2 {
-        font-size: calc(var(--brand-subtitle-font-size) / 2);
-    }
-}
-
-
-.dropdown {
-    background-color: var(--primary-color-transparent);
-    left: 0;
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    visibility: hidden;
-    width: 150%;
-}
-
-.dropdown__button {
-    position: relative;
-}
-
-.dropdown__button::after {
-    content: " ▸";
-}
-
-.dropdown__button:hover::after {
-    content: " ▾";
-}
-
-.dropdown__button:active .dropdown,
-.dropdown__button:hover .dropdown {
-    visibility: visible;
-}
-
-.dropdown__item {
+.navbar {
+    align-items: stretch;
+    display: flex;
     list-style: none;
-    padding: var(--button-padding);
+    margin: 0;
+    padding: 0;
+    justify-content: center;
 }
 
-.dropdown__item:hover {
-    background-color: var(--primary-color);
+.navbar li {
+    padding: 1em;
 }
 
-.dropdown__item:hover .dropdown__link {
+.navbar a {
     color: var(--secondary-color);
+    text-decoration: none;
+}
+
+header .navbar li:hover {
+    background-color: var(--primary-color-dark);
+}
+
+footer {
+    box-shadow: 0 100vh 0 100vh var(--primary-color);
+    padding-bottom: 2.5rem;
+}
+
+footer .navbar a:hover {
+    color: var(--primary-color-light)
+}
+
+main {
+    align-items: center;
+    display: flex;
+    max-width: 75vw;
+    min-height: 50vh;
+    justify-content: space-around;
+}
+
+iframe {
+    --height: 540px;
+
+    border-style: hidden;
+    height: var(--height);
+    width: calc(var(--height) / 9 * 16);
+}
+
+p {
+    max-width: 70ch;
+}
+
+/* Curriculum Vitae ---------------------------------------------------------*/
+
+#cv {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1vw;
+}
+
+#cv ul {
+    --padding-left: 2rem;
+
+    padding-left: var(--padding-left);
+}
+
+#cv li {
+    list-style: none;
+}
+
+#cv__skills {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2vw;
+    justify-content: space-around;
+}
+
+#cv__skills li {
+    max-width: 20ch;
+    min-width: 15ch;
+}
+
+.cv__list-item {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+p.cv__list-item {
+    padding: 0;
+    line-height: 2rem;
+}
+
+.cv__date-container {
+    float: right;
 }
 
 /* About Me -----------------------------------------------------------------*/
 
 #about-me {
+    --gap: 2rem;
+
     align-items: center;
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
+    flex-flow: row wrap;
+    gap: var(--gap);
     justify-content: space-around;
 }
 
 #about-me img {
-    width: 512px;
+    --width: 256px;
+
+    width: var(--width);
+}
+
+/* @media -------------------------------------------------------------------*/
+
+@media screen and (max-width: 1200px) {
+
+    #about-me {
+        gap: calc(var(--gap) / 4);
+    }
+
+    #about-me img {
+        width: calc(var(--width) * 0.75);
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    body {
+        gap: 2vh;
+    }
+
+    #cv ul {
+        padding-left: 1rem;
+    }
+
+    .cv__date-container {
+        display: block;
+        float: none;
+        padding: 0.5rem 0;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    body {
+        gap: 0;
+    }
+
+    main {
+        max-width: 85vw;
+    }
+
+    .brand h2 {
+        font-size: 1em;
+    }
+
+    #cv ul {
+        padding-left: 0;
+    }
+
+    #cv__skills {
+        display: block;
+    }
 }
