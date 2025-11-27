@@ -1,0 +1,271 @@
+:root {
+    --primary-color: hsl(210 100% 25%);
+    --primary-color-dark: hsl(from var(--primary-color) h s calc(l / 1.25));
+    --primary-color-light: hsl(from var(--primary-color) h s calc(l * 3));
+    --primary-color-transparent: hsl(var(--primary-color-light) / 0.75);
+
+    --primary-font-size: 1rem;
+    --primary-line-height: 1.5;
+
+    --primary-padding: 1rem;
+
+    --secondary-color: white;
+    --secondary-color-dark: hsl(0 0% 95%);
+
+    --tertiary-color: hsl(30 100% 75%);
+    --tertiary-color-light: hsl(from var(--tertiary-color) h calc(s / 3) 95%);
+
+    --brand-title-font-size: calc(var(--primary-font-size) * 3);
+    --brand-subtitle-font-size: var(--primary-font-size);
+}
+
+/* APIs ***********************************************************************/
+
+.courier-prime-bold {
+    font-family: "Courier Prime", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Globals ********************************************************************/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-size: var(--primary-font-size);
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-flow: column wrap;
+    font-family: -apple-system, Helvetica, Arial, sans-serif, "Apple Color Emoji";
+    line-height: var(--primary-line-height);
+    min-height: 100vh;
+    place-items: center center;
+    place-content: space-around space-around;
+}
+
+p {
+    padding: 0.5rem 0;
+}
+
+.h1 {
+    font-size: calc(var(--primary-font-size) * 2);
+}
+
+.h2 {
+    font-size: calc(var(--primary-font-size) * 1.5);
+}
+
+/* Header/Footer *************************************************************/
+
+header, footer {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+footer {
+    color: var(--secondary-color);
+    padding: 1rem 0 3rem;
+}
+
+.footer__copyright {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Brand *********************************************************************/
+
+.brand {
+    padding: 1rem;
+}
+
+.brand, .brand * {
+    background-color: var(--secondary-color);
+}
+
+.brand__name {
+    font-size: var(--brand-title-font-size);
+}
+
+.brand__title {
+    font-size: var(--brand-subtitle-font-size);
+}
+
+.brand__link {
+    text-decoration: none;
+}
+
+.brand__name, .brand__title {
+    color: var(--primary-color-dark);
+    text-align: center;
+}
+
+/* Navbar *********************************************************************/
+
+.navbar__container {
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    place-content: space-around space-around;
+    place-items: center center;
+    text-align: center;
+}
+
+.navbar__item {
+    list-style: none;
+}
+
+.navbar__link {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+header .navbar__item {
+    padding: 0.5rem 1rem;
+}
+
+header .navbar__item:hover {
+    background-color: var(--primary-color-dark);
+}
+
+footer .navbar {
+    gap: 1rem;
+}
+
+footer .navbar__link:hover {
+    color: var(--primary-color-light);
+}
+
+/* Main **********************************************************************/
+
+main {
+    background-color: var(--secondary-color);
+    flex: 1;
+    padding: 2rem;
+    width: 100%;
+}
+
+body * {
+    /*outline: 1px dotted gray;*/
+}
+
+.copy-text {
+    max-width: 75ch;
+}
+
+.reel__container {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+/* Curriculum Vitae **********************************************************/
+
+.cv__container {
+    align-content: center;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.cv__subheading, .cv__sub-subheading {
+    padding: 0.25rem 0;
+}
+
+.cv__date-container::before {
+    content: ", ";
+}
+
+.cv__list-container {
+    /*padding: 2rem 0;*/
+}
+
+.cv__list-item {
+    list-style: none;
+    min-width: 20ch;
+    padding: 0 0 0 2rem;
+}
+
+.cv__skills__container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    place-content: space-around space-around;
+}
+
+/* About Me ******************************************************************/
+
+.about-me__container {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.about-me__img {
+    max-width: 400px;
+}
+
+#about-me {
+    padding: 1rem 1rem 5rem;
+}
+
+
+/* @media *********************************************************************/
+
+@media screen and (max-width: 900px) {
+    :root {
+        --primary-font-size: 0.9rem;
+        --brand-title-font-size: calc(var(--primary-font-size) * 2.5);
+    }
+
+    .cv__list-item {
+        padding: 0 0 0 1rem;
+    }
+
+    .about-me__img {
+        max-width: 256px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .h1 {
+        font-size: calc(var(--primary-font-size) * 1.5);
+    }
+
+    .h2 {
+        font-size: calc(var(--primary-font-size) * 1.25);
+    }
+
+    .cv__date-container::before {
+        content: "\A";
+        white-space: pre-wrap;
+    }
+
+    .cv__list-item {
+        padding: 0;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+    :root {
+        --brand-title-font-size: calc(var(--primary-font-size) * 2);
+    }
+}
