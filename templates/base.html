@@ -1,4 +1,4 @@
-{% load static %}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 <head>
   <meta charset="UTF-8"/>
@@ -15,21 +15,21 @@
     src="https://kit.fontawesome.com/ebd1029440.js"
     crossorigin="anonymous"
   ></script>
-  <link rel="stylesheet" href="{% static 'core/css/main.css' %}"/>
-  <link rel="stylesheet" href="{% static 'core/css/navbar.css' %}"/>
+  <link rel="stylesheet"
+        href="{{ url_for( 'static', filename='css/main.css') }}"/>
   {% block head %}{% endblock head %}
 </head>
 
 <body>
-<header class="header">
-  <section class="brand">
-    <a href="{% url 'index' %}">
+<header>
+  <section class="brand" id="brand">
+    <a class="brand__link" href="{{ url_for('index') }}">
       <h1 class="brand__name courier-prime-bold">Charles Mesa Cayobit</h1>
       <h2 class="brand__title">Programmer | Technical Artist |
         Photographer</h2>
     </a>
   </section>
-  <nav class="navbar--header">
+  <nav class="navbar__container">
     <ul class="navbar">
       {#      <li class="navbar__item dropdown__button">#}
       {#        <a class="navbar__link" href="/3d/">3D Work</a>#}
@@ -54,10 +54,10 @@
       {#        <a class="navbar__link" href="/photo/">Photography</a>#}
       {#      </li>#}
       <li class="navbar__item">
-        <a class="navbar__link" href="{% url 'cv' %}">Curriculum Vitae</a>
+        <a class="navbar__link" href="{{ url_for('cv') }}">Curriculum Vitae</a>
       </li>
       <li class="navbar__item">
-        <a class="navbar__link" href="{% url 'about-me' %}">About Me</a>
+        <a class="navbar__link" href="{{ url_for('about_me') }}">About Me</a>
       </li>
     </ul>
   </nav>
@@ -65,45 +65,50 @@
 
 <main>{% block content %}{% endblock content %}</main>
 
-<footer class="footer">
-  <ul class="navbar navbar--footer">
-    <li class="navbar__item">
-      <a class="navbar__link"
-         href="mailto:charlesmesacayobit@gmail.com"
-         title="Send an email to Charles Mesa Cayobit">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-    </li>
+<footer>
+  <section class="navbar__container">
+    <ul class="navbar">
+      <li class="navbar__item">
+        <a class="navbar__link"
+           href="mailto:charlesmesacayobit@gmail.com"
+           title="Send an email to Charles Mesa Cayobit">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </li>
 
-    <li class="navbar__item">
-      <a class="navbar__link"
-         href="https://www.linkedin.com/in/charlesmesacayobit"
-         title="Open LinkedIn in a new tab"
-         target="_blank">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-    </li>
+      <li class="navbar__item">
+        <a class="navbar__link"
+           href="https://www.linkedin.com/in/charlesmesacayobit"
+           title="Open LinkedIn in a new tab"
+           target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </li>
 
-    <li class="navbar__item">
-      <a class="navbar__link"
-         href="https://github.com/CharlesMC11"
-         title="Open GitHub in a new tab"
-         target="_blank">
-        <i class="fa-brands fa-github-alt"></i>
-      </a>
-    </li>
+      <li class="navbar__item">
+        <a class="navbar__link"
+           href="https://github.com/CharlesMC11"
+           title="Open GitHub in a new tab"
+           target="_blank">
+          <i class="fa-brands fa-github-alt"></i>
+        </a>
+      </li>
 
-    <li class="navbar__item">
-      <a class="navbar__link"
-         href="https://instagram.com/charlesmc.techart"
-         title="Open Instagram in a new tab"
-         target="_blank">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-    </li>
-  </ul>
+      <li class="navbar__item">
+        <a class="navbar__link"
+           href="https://instagram.com/charlesmc.techart"
+           title="Open Instagram in a new tab"
+           target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </li>
+    </ul>
+  </section>
 
-  <p>Made with Django.</p>
+  <section class="footer__copyright">
+    <p>© Charles Mesa Cayobit</p>
+    <p>Made with Flask</p>
+  </section>
 </footer>
 </body>
 </html>

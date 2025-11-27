@@ -1,0 +1,30 @@
+<section id="cv__experience">
+  <h2 class="h1">Experience</h2>
+
+  <ul>
+    {% for employer, jobs in experience.items() %}
+      <li class="cv__list-item">
+      <h3 class="h2 cv__subheading">{{ employer }}</h3>
+
+      <ul>
+        {% for position, details in jobs.items() -%}
+          <li class="cv__list-item"><h4
+          class="cv__sub-subheading">{{- position -}}<span
+          class="cv__date-container"><span
+          class="cv__exp-date">{{- details.start_date -}}</span>–<span
+          class="cv__exp-date">{{- details.end_date -}}</span></span>
+        </h4>
+
+          {% if details.highlights -%}
+            <ul>
+              {%- for highlight in details.highlights %}
+                <li class="cv__list-item"><p class="copy-text">
+                {{- highlight -}}
+              {% endfor %}
+            </ul>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {% endfor %}
+  </ul>
+</section>

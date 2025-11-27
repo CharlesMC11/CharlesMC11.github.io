@@ -1,0 +1,38 @@
+<section>
+  <h2 class="h1">Projects</h2>
+
+  <ul>
+    {% for project, details in projects.items() %}
+      <li class="cv__list-item">
+      <h3 class="h2 cv__subheading">
+        <cite class="h2">
+          {%- if details.url -%}
+            <a class="h2" href="{{- details.url -}}">{{- project -}}</a>
+          {%- else -%}
+            {{- project -}}
+          {%- endif -%}
+        </cite>&nbsp;<span class="h2">{{ details.type }}</span>
+      </h3>
+
+      <ul>
+        {% for roles, details in details.roles.items() -%}
+          <li class="cv__list-item">
+          <h4 class="cv__sub-subheading cv__exp-role">{{- roles -}}<span
+            class="cv__date-container"><span
+            class="cv__exp-date">{{- details.start_date -}}</span>–<span
+            class="cv__exp-date">{{- details.end_date -}}</span></span>
+          </h4>
+
+          {% if details.highlights -%}
+            <ul>
+              {%- for highlight in details.highlights %}
+                <li class="cv__list-item"><p class="copy-text">
+                {{- highlight -}}
+              {% endfor %}
+            </ul>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,17 +1,20 @@
-{% extends "core/base.html" %}{% load static %}{% block content %}
-  <article id="about-me">
-    <img src="{% static 'core/portrait.png' %}"
+{% extends "base.html" %}
+
+{% block content %}
+  <article class="about-me__container">
+    <img class="about-me__img"
+         src="{{ url_for('static', filename='portrait.png') }}"
          alt="A monochrome photograph of Charles Mesa Cayobit"/>
 
-    <section>
-      <h2>About Me</h2>
-      <p>
+    <section id="about-me">
+      <h2 class="h1">About Me</h2>
+      <p class="copy-text">
         Hello, hello! I'm Charles (he/him), a recent graduate based in the Bay
         Area, California. I firmly believe that art and technology go hand in
         hand in creating authentic stories and impactful experiences. I love
         learning new things and solving problems, and I hope to use my skills
         to realize people's artistic visions.
-      <p>
+      <p class="copy-text">
         In my free time, I love writing journals, taking photos, and building
         Legos.
     </section>

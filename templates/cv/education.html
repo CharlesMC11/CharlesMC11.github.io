@@ -1,0 +1,18 @@
+<section>
+  <h2 class="h1">Education</h2>
+
+  <ul class="cv__list-container">
+    {%- for school, concentrations in education.items() -%}
+      <li class="cv__list-item">
+      <h3 class="h2 cv__subheading cv__school-name">{{- school -}}</h3>
+
+      <ul>{%- for degree, concentration, awarded in concentrations %}
+        <li class="cv__list-item">{{- degree }}&nbsp;{{ concentration -}}<span
+          class="cv__date-container"><span
+          class="cv__exp-date">{{- awarded -}}</span></span>
+
+      {%- endfor -%}
+      </ul>
+    {%- endfor -%}
+  </ul>
+</section>
