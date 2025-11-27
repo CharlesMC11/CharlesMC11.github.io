@@ -69,11 +69,11 @@ def cv(request):
                     continue
 
                 result[entity][role] = [
-                    highlight
-                    for highlight in getattr(
+                                           highlight
+                                           for highlight in getattr(
                         role, tertiary_reverse_many_to_one_descriptor_str
                     ).all()
-                ] or None
+                                       ] or None
 
         return result
 
@@ -81,7 +81,8 @@ def cv(request):
         Employer, dict[JobPosition, list[JobPositionHighlight]]
     ] = get_highlights(Employer, JobPosition, JobPositionHighlight)
 
-    projects: dict[Project, dict[ProjectRoles, list[ProjectRolesHighlight]]] = (
+    projects: dict[
+        Project, dict[ProjectRoles, list[ProjectRolesHighlight]]] = (
         get_highlights(Project, ProjectRoles, ProjectRolesHighlight)
     )
 
@@ -117,7 +118,13 @@ def cv(request):
         "skills": skills,
         "education": education,
     }
-    return render(request, "core/cv/base.html", context)
+
+    html = render(request, "core/cv/base.html", context)
+
+    with open((_ROOT_DIR / request.path).with_suffix('.html'), 'wb') as f:
+        f.write(html.content)
+
+    return html
 
 
 def about_me(request):

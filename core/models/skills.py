@@ -4,7 +4,10 @@ from .base import NamedEntity
 
 
 class SkillCategory(NamedEntity):
+    order = models.IntegerField(default=0)
+
     class Meta:
+        ordering = ["order"]
         verbose_name_plural = "SKL - Skill Categories"
 
 
