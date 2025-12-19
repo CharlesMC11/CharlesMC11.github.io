@@ -1,0 +1,16 @@
+<section>
+  <h2 class="h1" id="skills">Skills</h2>
+
+  <ul class="cv__skills__container" id="cv__skills">
+    {% for category, skills in skills.items() %}
+      <li class="cv__list-item">
+      <h3 class="h2">{{ category }}</h3>
+
+      <ul>
+        {%- for skill in skills %}
+          <li class="cv__list-item">{{- skill -}}
+        {%- endfor %}
+      </ul>
+    {%- endfor -%}
+  </ul>
+</section>

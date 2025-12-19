@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+  <h2>Photography</h2>
+  <ul>
+    <li>
+      <a href="{{ url_for('.personal') }}">Personal</a>
+    </li>
+    <li>
+      <a href="{{ url_for('.events') }}">Events</a>
+    </li>
+  </ul>
+{% endblock content %}

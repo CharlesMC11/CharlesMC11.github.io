@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form action="/auth" method="post">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+  </form>
+{% endblock content %}
