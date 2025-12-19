@@ -1,0 +1,19 @@
+[project]
+name = "python"
+version = "0.3.0"
+description = "My portfolio website"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "flask>=3.1.2",
+    "mypy>=1.19.0",
+    "python-dotenv>=1.2.1",
+]
+
+[dependency-groups]
+prod = [
+    "gunicorn>=23.0.0",
+]
+
+[tool.ruff]
+line-length = 80
