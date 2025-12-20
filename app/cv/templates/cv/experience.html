@@ -9,8 +9,8 @@
       <ul>
         {% for position, details in jobs.items() -%}
           <li class="cv__list-item">
-          <dl>
-            <dt><h4 class="cv__sub-subheading">{{- position -}}</h4></dt>
+          <dl class="cv__sub-subheading">
+            <dt><h4>{{- position -}}</h4></dt>
             <dd class="cv__date-container"><h5><span
               class="cv__exp-date">{{- details.start_date -}}</span>–<span
               class="cv__exp-date">{{- details.end_date -}}</span></h5>

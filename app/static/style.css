@@ -112,7 +112,7 @@ footer {
 }
 
 .brand__name, .brand__title {
-    color: var(--primary-color-dark);
+    color: var(--primary-color);
     text-align: center;
 }
 
@@ -186,15 +186,28 @@ body * {
     flex-flow: column wrap;
 }
 
+.cv__subheading {
+    color: var(--primary-color);
+}
+
 .cv__subheading, .cv__sub-subheading {
     padding: 0.25rem 0;
 }
+
 
 .cv__list-item {
     list-style: none;
     min-width: 20ch;
     padding: 0 0 0 2rem;
 }
+
+.cv__list-item dl {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
 
 .cv__skills__container {
     display: flex;
@@ -247,7 +260,7 @@ body * {
     .h2 {
         font-size: calc(var(--primary-font-size) * 1.25);
     }
-    
+
     .cv__list-item {
         padding: 0;
         width: 100%;
