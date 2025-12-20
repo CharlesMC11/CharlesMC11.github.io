@@ -208,6 +208,9 @@ body * {
     justify-content: space-between;
 }
 
+.cv__project-link {
+    color: var(--primary-color-light);
+}
 
 .cv__skills__container {
     display: flex;

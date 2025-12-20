@@ -7,7 +7,8 @@
       <h3 class="h2 cv__subheading">
         <cite class="h2">
           {%- if details.url -%}
-            <a class="h2" href="{{- details.url -}}">{{- project -}}</a>
+            <a class="h2 cv__project-link"
+               href="{{- details.url -}}">{{- project -}}</a>
           {%- else -%}
             {{- project -}}
           {%- endif -%}
