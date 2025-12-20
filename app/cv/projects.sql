@@ -12,4 +12,5 @@ FROM prj_projects AS project
          LEFT JOIN prj_highlights AS highlight
                    ON highlight.roles_id = roles.roles_id
 
-ORDER BY roles.roles_end_date DESC, roles.roles_start_date DESC;
+ORDER BY roles.roles_end_date DESC, roles.roles_start_date DESC,
+         highlight.highlight_id;
