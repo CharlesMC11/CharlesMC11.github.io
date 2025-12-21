@@ -1,0 +1,10 @@
+name: "Install uv"
+author: "CharlesMC11"
+description: "Install uv"
+runs:
+  using: composite
+  steps:
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+      with:
+        version: "0.9.18"

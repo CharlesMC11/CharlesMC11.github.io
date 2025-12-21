@@ -1,0 +1,42 @@
+name: workflow.yml
+on: [ push ]
+
+jobs:
+  lock_file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - uses: ./.github/actions/setup
+      - run: uv lock --locked
+
+  linting:
+    runs-on: ubuntu-latest
+    needs: [ lock_file ]
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - uses: ./.github/actions/setup
+      - run: uvx ruff check app
+
+  formatting:
+    runs-on: ubuntu-latest
+    needs: [ lock_file ]
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - uses: ./.github/actions/setup
+      - run: uvx ruff format --check app
+
+  type_checking:
+    runs-on: ubuntu-latest
+    needs: [ lock_file ]
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - uses: ./.github/actions/setup
+      - run: uv run mypy app
+
+  build:
+    runs-on: [ ubuntu-latest ]
+    needs: [ linting, formatting, type_checking ]
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - uses: ./.github/actions/setup
+      - run: uv build
