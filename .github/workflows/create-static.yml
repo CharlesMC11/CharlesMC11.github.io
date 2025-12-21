@@ -29,8 +29,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/create-static.yml
-
       - name: Checkout
         uses: actions/checkout@v4
 
