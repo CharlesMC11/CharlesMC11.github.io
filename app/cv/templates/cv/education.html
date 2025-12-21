@@ -9,7 +9,8 @@
       <ul>{%- for degree, concentration, awarded in concentrations %}
         <li class="cv__list-item">
         <dl>
-          <dt>{{- degree }}&nbsp;{{ concentration -}}</dt>
+          <dt
+            class="cv__concentration">{{- degree }}&nbsp;{{ concentration -}}</dt>
           <dd class="cv__date-container"><span
             class="cv__exp-date">{{- awarded -}}</span></dd>
         </dl>

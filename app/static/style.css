@@ -218,6 +218,10 @@ body * {
     place-content: space-around space-around;
 }
 
+.cv__concentration {
+    padding: 0.25rem 0;
+}
+
 /* About Me ******************************************************************/
 
 .about-me__container {
