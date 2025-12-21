@@ -215,6 +215,7 @@ body * {
     display: flex;
     flex-flow: row wrap;
     gap: 1rem;
+    margin: 0 0 0.5rem;
     place-content: space-around space-around;
 }
 
@@ -251,6 +252,10 @@ body * {
 
     .cv__list-item {
         padding: 0 0 0 1rem;
+    }
+
+    .cv__list-item dl {
+        flex-direction: column;
     }
 
     .about-me__img {
