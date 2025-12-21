@@ -255,7 +255,7 @@ body * {
     }
 
     .cv__list-item dl {
-        flex-direction: column;
+        display: block;
     }
 
     .about-me__img {
