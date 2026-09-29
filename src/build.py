@@ -14,70 +14,77 @@ CONTENT_DIR = SRC_DIR.parent / "content"
 BUILD_DIR = SRC_DIR.parent / "build"
 BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
-ENV = Environment(
+JINJA_ENV = Environment(
     trim_blocks=True, lstrip_blocks=True, loader=FileSystemLoader(TEMPLATE_DIR)
 )
 
 
-YEAR = date.today().year
+CURRENT_YEAR = date.today().year
 
 # Public functions
 
 
-def render_template() -> None:
-    """Render a template whose filename is given at the CLI.
+def build_page() -> None:
+    """Render and compile a page template passed via CLI argument.
 
     Expects `sys.argv[1]` to be the filename of the template to render.
     """
 
-    filename = Path(sys.argv[1])
-    content = ENV.get_template(str(filename)).render(
-        year=YEAR, socials=SOCIALS
+    template_name = Path(sys.argv[1]).name
+    content = JINJA_ENV.get_template(template_name).render(
+        socials=SOCIALS, current_year=CURRENT_YEAR
     )
-    (BUILD_DIR / filename.stem).write_text(_minify(content))
+    (BUILD_DIR / template_name.removesuffix(".jinja")).write_text(
+        _minify(content)
+    )
 
 
-def render_cv() -> None:
-    """Render the CV page."""
+def build_cv() -> None:
+    """Aggregate the CV data sources and compile the unified CV page."""
 
-    content = ENV.get_template("cv/all.html.jinja").render(
-        year=YEAR,
-        experience=_experience(),
-        projects=_load_sorted_yaml("projects.yaml"),
-        skills=_load_yaml("skills.yaml"),
-        education=_load_sorted_yaml("education.yaml"),
+    content = JINJA_ENV.get_template("cv/all.html.jinja").render(
         socials=SOCIALS,
+        experience=_load_and_sort_experience(),
+        projects=_load_and_sort_yaml("projects.yaml"),
+        skills=_load_yaml("skills.yaml"),
+        education=_load_and_sort_yaml("education.yaml"),
+        current_year=CURRENT_YEAR,
     )
     (BUILD_DIR / "cv.html").write_text(_minify(content))
+
+
+# FIXME
+def build_css() -> None:
+    raise NotImplemented
 
 
 # Protected helpers
 
 
-def _experience() -> list[dict[str, Any]]:
+def _load_and_sort_experience() -> list[dict[str, Any]]:
     """Parse `experience.yaml` into a list of dictionaries."""
 
     content = _load_yaml("experience.yaml")
     for company in content:
-        company["roles"].sort(key=_by_end_date, reverse=True)
-    content.sort(key=lambda x: _by_end_date(x["roles"][0]), reverse=True)
+        company["roles"].sort(key=_record_date_key, reverse=True)
+    content.sort(key=lambda x: _record_date_key(x["roles"][0]), reverse=True)
 
     return content
 
 
-def _by_end_date(entry: dict[str, date | Any]) -> tuple[date, date]:
-    """Get the end date and start date for a given entry.
+def _record_date_key(record: dict[str, date | Any]) -> tuple[date, date]:
+    """Get the end date and start date for a given val.
 
-    :param entry: entry from a dictionary entry from a YAML file.
+    :param record: A record from a YAML file.
 
-    :returns: A tuple containing the end and start dates of an entry.
+    :returns: A tuple containing the end and start dates of a record.
     """
 
-    return entry.get("end_date", date.max), entry["start_date"]
+    return record.get("end_date", date.max), record["start_date"]
 
 
-def _load_sorted_yaml(
-    filename: str, key=_by_end_date
+def _load_and_sort_yaml(
+    filename: str, key=_record_date_key
 ) -> list[dict[str, date | Any]]:
     """Parse a YAML file into a sorted list of dictionaries."""
 
@@ -92,10 +99,10 @@ def _load_yaml(filename: str) -> list[dict[str, Any]] | dict[str, Any]:
         return yaml.safe_load(f)
 
 
-def _date_filter(entry: date) -> str:
+def _date_formatter(val: date) -> str:
     """Date format filter for Jinja."""
 
-    return entry.strftime("%b %Y")
+    return val.strftime("%b %Y")
 
 
 def _minify(content: str) -> str:
