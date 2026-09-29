@@ -7,9 +7,9 @@
     {%- set link -%}
     {%- if project.url -%}
       <a class="h2 cv__project-link"
-         href="{{- project.url -}}">{{- display_name -}}</a>
+         href="{{- project.url | trim -}}">{{- display_name | trim -}}</a>
     {%- else -%}
-      {{- display_name -}}
+      {{- display_name | trim -}}
     {%- endif -%}
     {%- endset -%}
 
@@ -22,14 +22,14 @@
         {%- endif -%}
 
         {%- if project.name -%}
-          &nbsp;{{- project.type -}}
+          &nbsp;{{- project.type | trim -}}
         {%- endif -%}
       </h3>
 
       <ul>
         <li class="cv__list-item">
           <dl class="cv__sub-subheading">
-            <dt><h4 class="cv__exp-role">{{- project.roles -}}</h4></dt>
+            <dt><h4 class="cv__exp-role">{{- project.roles | trim -}}</h4></dt>
             <dd class="cv__date-container"><h5><span
               class="cv__exp-date">{{- project.start_date | date -}}</span>–<span
               class="cv__exp-date">
@@ -45,7 +45,7 @@
             <ul>
               {%- for highlight in project.highlights -%}
                 <li class="cv__list-item"><p class="copy-text">
-                  {{- highlight -}}
+                  {{- highlight | trim -}}
                 </p></li>
               {%- endfor -%}
             </ul>
@@ -53,6 +53,7 @@
 
         </li>
       </ul>
+
     </li>
     {%- endfor -%}
   </ul>

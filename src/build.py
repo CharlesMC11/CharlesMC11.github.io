@@ -27,7 +27,9 @@ def render_template() -> None:
     """Render a template whose filename is given at the CLI."""
 
     filename = Path(sys.argv[1])
-    content = ENV.get_template(str(filename)).render(year=YEAR)
+    content = ENV.get_template(str(filename)).render(
+        year=YEAR, socials=SOCIALS
+    )
     (BUILD_DIR / filename.stem).write_text(_minify(content))
 
 
@@ -40,6 +42,7 @@ def render_cv() -> None:
         projects=_load_sorted_yaml("projects.yaml"),
         skills=_load_yaml("skills.yaml"),
         education=_load_sorted_yaml("education.yaml"),
+        socials=SOCIALS,
     )
     (BUILD_DIR / "cv.html").write_text(_minify(content))
 
@@ -81,3 +84,5 @@ def _minify(content: str) -> str:
 
 
 ENV.filters["date"] = _format_date
+
+SOCIALS = _load_yaml("socials.yaml")
