@@ -11,10 +11,14 @@ GLOBAL_DEPS 	:= $(CONTENT_DIR)/socials.yaml $(BASE_TEMPLATE)
 
 BUILD_DIR   	:= ./build
 
-all: $(BUILD_DIR)/index.html $(BUILD_DIR)/about-me.html $(BUILD_DIR)/cv.html
+all: $(BUILD_DIR)/index.html $(BUILD_DIR)/about-me.html $(BUILD_DIR)/cv.html \
+		$(BUILD_DIR)/style.css
 
 $(BUILD_DIR)/cv.html: $(CV_TEMPLATES) $(CV_CONTENT_DIR) $(GLOBAL_DEPS)
 	uv run build_cv
 
 $(BUILD_DIR)/%.html: $(TEMPLATES_DIR)/%.html.jinja $(GLOBAL_DEPS)
 	uv run build_page $(<F)
+
+$(BUILD_DIR)/style.css: ./src/static/style.css.jinja
+	cp -f $< $@
