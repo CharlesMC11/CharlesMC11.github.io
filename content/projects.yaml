@@ -18,7 +18,7 @@
             energy requirements
         - Implemented a constrained bisection root‐finder and numerical Euler integrator
             utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation
-            at $10^{-4}$ s time steps
+            at 0.0001 s time steps
         - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile
             knowledge base pages into HTML and PDF
 
