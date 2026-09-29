@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 
 SRC_DIR = Path(__file__).parent
 TEMPLATE_DIR = SRC_DIR / "templates"
-CONTENT_DIR = SRC_DIR / "content"
+CONTENT_DIR = SRC_DIR.parent / "content"
 
 BUILD_DIR = SRC_DIR.parent / "build"
 BUILD_DIR.mkdir(parents=True, exist_ok=True)
@@ -18,6 +18,8 @@ ENV = Environment(
 )
 
 
+YEAR = date.today().year
+
 # Public functions
 
 
@@ -25,7 +27,7 @@ def render_template() -> None:
     """Render a template whose filename is given at the CLI."""
 
     filename = Path(sys.argv[1])
-    content = ENV.get_template(str(filename)).render()
+    content = ENV.get_template(str(filename)).render(year=YEAR)
     (BUILD_DIR / filename.stem).write_text(_minify(content))
 
 
@@ -33,6 +35,7 @@ def render_cv() -> None:
     """Render the CV page."""
 
     content = ENV.get_template("cv/all.html.jinja").render(
+        year=YEAR,
         experience=_experience(),
         projects=_load_sorted_yaml("projects.yaml"),
         skills=_load_yaml("skills.yaml"),
