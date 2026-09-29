@@ -1,4 +1,4 @@
 # resumake
 
-Source code and a simple static website generator for my personal website
-utilizing YAML, Jinja, Python, and make
+Source code and a simple static site generator for my personal website
+utilizing Python, Jinja, and Make
