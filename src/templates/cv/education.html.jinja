@@ -4,26 +4,28 @@
   <ul class="cv__list-container">
     {%- for institution in education -%}
       <li class="cv__list-item">
-        <dl>
-          <dt>
-            <h3 class="h2 cv__subheading cv__school-name">
-              {{- institution.institution | trim -}}
-            </h3>
-          </dt>
-
-          <dd class="cv__date-container"><h5
-            class="cv__exp-date">{{- institution.end_date | date_fmt -}}</h5>
-          </dd>
-          {%- if institution.honors -%}
-            <dd><h4><i>{{- institution.honors | trim -}}</i></h4></dd>
-          {%- endif -%}
-        </dl>
+        <h3 class="h2 cv__subheading">
+          {{- institution.institution | trim -}}
+        </h3>
 
         <ul>
           {%- for concentration in institution.concentrations -%}
-            <li
-              class="cv__list-item cv__concentration">
-              {{- concentration.degree | trim -}}&nbsp;{{- concentration.name | trim -}}</li>
+            <li class="cv__list-item">
+
+              <dl class="cv__sub-subheading">
+                <dt><h4>
+                  {{- concentration.degree | trim -}}&nbsp;{{- concentration.name | trim -}}
+                  {%- if concentration.honors -%},
+                    {{ concentration.honors | trim -}}
+                  {%- endif -%}
+                </h4></dt>
+
+                <dd class="cv__date-container">
+                  <h5>{{- concentration.award_date | date_fmt -}}</h5>
+                </dd>
+              </dl>
+
+            </li>
           {%- endfor -%}
 
           {%- if institution.certificates -%}
@@ -31,7 +33,7 @@
               <ul>
                 {%- for cert in institution.certificates -%}
                   <li
-                    class="cv__list-item cv__concentration">{{- cert.concentration | trim -}}</li>
+                    class="cv__list-item">{{- cert.concentration | trim -}}</li>
                 {%- endfor -%}
               </ul>
             </li>
