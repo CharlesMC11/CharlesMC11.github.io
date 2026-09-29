@@ -138,6 +138,13 @@
             configurations into and compile the shell artifacts into Zsh word code, deployed
             to a transient RAM disk
 
+-   name: File Organizer
+    type: Automation Script
+    url: https://github.com/CharlesMC11/file-organizer.git
+    roles: Developer
+    start_date: 2025-07-13
+    end_date: 2026-01-07
+
 -   type: GBA-Inspired Sprite Engine
     url: https://github.com/CharlesMC11/test-sprite-engine.git
     roles: Developer
