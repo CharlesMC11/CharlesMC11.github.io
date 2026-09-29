@@ -8,7 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 
 SRC_DIR = Path(__file__).parent
 TEMPLATE_DIR = SRC_DIR / "templates"
-CONTENT_DIR = SRC_DIR / "content"
+CONTENT_DIR = SRC_DIR.parent / "content"
 
 BUILD_DIR = SRC_DIR.parent / "build"
 BUILD_DIR.mkdir(parents=True, exist_ok=True)
