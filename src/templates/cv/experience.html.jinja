@@ -4,13 +4,13 @@
   <ul>
     {%- for company in experience -%}
       <li class="cv__list-item">
-        <h3 class="h2 cv__subheading">{{- company.company -}}</h3>
+        <h3 class="h2 cv__subheading">{{- company.company | trim -}}</h3>
 
         <ul>
           {%- for role in company.roles -%}
             <li class="cv__list-item">
               <dl class="cv__sub-subheading">
-                <dt><h4>{{- role.name -}}</h4></dt>
+                <dt><h4>{{- role.name | trim -}}</h4></dt>
                 <dd class="cv__date-container"><h5><span
                   class="cv__exp-date">{{- role.start_date | date -}}</span>–<span
                   class="cv__exp-date">{{- role.end_date | date -}}</span>
@@ -22,13 +22,13 @@
                 <ul>
                   {%- for highlight in role.highlights -%}
                     <li class="cv__list-item"><p class="copy-text">
-                      {{- highlight -}}
+                      {{- highlight | trim -}}
                     </p></li>
                   {%- endfor -%}
                 </ul>
               {%- endif -%}
-            </li>
 
+            </li>
           {%- endfor -%}
         </ul>
 
