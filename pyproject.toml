@@ -6,6 +6,10 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
 
+[project.scripts]
+render_template = "build:render_template"
+render_cv = "build:render_cv"
+
 [dependency-groups]
 dev = [
     "jinja2>=3.1.6",

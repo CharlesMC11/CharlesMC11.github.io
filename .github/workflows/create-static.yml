@@ -35,8 +35,11 @@ jobs:
             -   name: Setup uv & Python
                 uses: ./.github/actions/setup
 
+            -   name: Setup Project
+                run: uv pip install -e .
+
             -   name: Build Pages
-                run: uv run build.py
+                run: make
 
             -   name: Setup Pages
                 uses: actions/configure-pages@v5

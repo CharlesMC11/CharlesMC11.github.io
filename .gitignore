@@ -1,10 +1,10 @@
 .env
 
+*.egg-info/
 .ruff_cache/
 .venv/
 __pycache__/
 *.pyc
-.python-version
 
 build/
 *.png
