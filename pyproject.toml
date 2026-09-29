@@ -4,7 +4,11 @@ version = "1.1"
 description = "My portfolio website compiler utilizing Python, Jinja, and Make"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "jinja2>=3.1.6",
+    "minify-html>=0.18.1",
+    "pyyaml>=6.0.3",
+]
 
 [project.scripts]
 build_page = "build:build_page"
@@ -12,9 +16,7 @@ build_cv = "build:build_cv"
 
 [dependency-groups]
 dev = [
-    "jinja2>=3.1.6",
-    "minify-html>=0.18.1",
-    "pyyaml>=6.0.3",
+    "pytest>=9.1.1",
     "ruff>=0.14.10",
     "types-pyyaml>=6.0.12.20260906",
 ]
