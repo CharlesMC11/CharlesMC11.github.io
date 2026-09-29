@@ -3,44 +3,42 @@
 
   <ul class="cv__list-container">
     {%- for institution in education -%}
-      <li class="cv__list-item">
-        <h3 class="h2 cv__subheading">
-          {{- institution.institution | trim -}}
-        </h3>
+    <li class="cv__list-item">
+      <h3 class="h2 cv__subheading">
+        {{- institution.institution | trim -}}
+      </h3>
 
-        <ul>
-          {%- for concentration in institution.concentrations -%}
-            <li class="cv__list-item">
+      <ul>
+        {%- for concentration in institution.concentrations -%}
+        {%- set honors = concentration.honors -%}
+        {%- set display_honors -%}
+        {% if "cum laude" in honors %}
+          <i lang="la">{{- honors | trim -}}</i>
+        {% else %}
+          {{- honors | trim -}}
+        {%- endif -%}
+        {%- endset -%}
 
-              <dl class="cv__sub-subheading">
-                <dt><h4>
-                  {{- concentration.degree | trim -}}&nbsp;{{- concentration.name | trim -}}
-                  {%- if concentration.honors -%},
-                    {{ concentration.honors | trim -}}
-                  {%- endif -%}
-                </h4></dt>
+        <li class="cv__list-item">
+          <dl class="cv__sub-subheading">
+            <dt><h4>
+              {{- concentration.degree | trim }} in
+              {{ concentration.name | trim -}}
+            </h4></dt>
 
-                <dd class="cv__date-container">
-                  <h5>{{- concentration.award_date | date_fmt -}}</h5>
-                </dd>
-              </dl>
+            <dd class="cv__date-container">
+              <h5>{{- concentration.award_date | date_fmt -}}</h5>
+            </dd>
+          </dl>
 
-            </li>
-          {%- endfor -%}
-
-          {%- if institution.certificates -%}
-            <li class="cv__list-item">Certificates of Achievement
-              <ul>
-                {%- for cert in institution.certificates -%}
-                  <li
-                    class="cv__list-item">{{- cert.concentration | trim -}}</li>
-                {%- endfor -%}
-              </ul>
-            </li>
+          {%- if honors -%}
+            <p class="cv__edu-honors">{{ display_honors | safe -}}</p>
           {%- endif -%}
-        </ul>
+        </li>
+        {%- endfor -%}
+      </ul>
 
-      </li>
+    </li>
     {%- endfor -%}
 
   </ul>
