@@ -7,7 +7,7 @@ Programming Languages:
     - JavaScript (ECMAScript)
     - MEL (Maya Embedded Language)
 
-Systems & High‐Performance Computing:
+Systems & HPC:
     - SIMD (Arm Neon Intrinsics)
     - Memory Management (RAII, SoA, mmap, Custom Allocators)
     - Concurrency (File‐based Locks)
@@ -20,7 +20,7 @@ Computer Graphics & Vision:
     - Texture Packing & Atlasing
     - Asset Pipelines
 
-Build & Developer Tools:
+Build & Dev Tools:
     - Zsh/Bash
     - CMake
     - Make
