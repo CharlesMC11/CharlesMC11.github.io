@@ -13,14 +13,13 @@
 
                 {# TODO: Perhaps extract this into its own `.jinja` template? #}
                 <dt><h4>{{- role.name | trim -}}</h4></dt>
-                <dd class="cv__date-container"><h5><span
-                  class="cv__exp-date">{{- role.start_date | date_fmt -}}</span>–<span
-                  class="cv__exp-date">
-                  {%- if role.end_date -%}
-                    {{- role.end_date | date_fmt -}}
-                  {%- else -%}
-                    Present
-                  {%- endif -%}</span></h5>
+                <dd class="cv__date-container">
+                  <h5>{{- role.start_date | date_fmt -}}–
+                    {%- if role.end_date -%}
+                      {{- role.end_date | date_fmt -}}
+                    {%- else -%}
+                      Present
+                    {%- endif -%}</h5>
                 </dd>
               </dl>
 
