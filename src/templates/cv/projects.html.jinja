@@ -28,17 +28,16 @@
       <ul>
         <li class="cv__list-item">
           <dl class="cv__sub-subheading">
-            <dt><h4 class="cv__exp-role">{{- project.roles | trim -}}</h4></dt>
+            <dt><h4>{{- project.roles | trim -}}</h4></dt>
 
             {# TODO: Perhaps extract this into its own `.jinja` template? #}
-            <dd class="cv__date-container"><h5><span
-              class="cv__exp-date">{{- project.start_date | date_fmt -}}</span>–<span
-              class="cv__exp-date">
-            {%- if project.end_date -%}
-              {{- project.end_date | date_fmt -}}
-            {%- else -%}
-              Present
-            {%- endif -%}</span></h5>
+            <dd class="cv__date-container">
+              <h5>{{- project.start_date | date_fmt -}}–
+                {%- if project.end_date -%}
+                  {{- project.end_date | date_fmt -}}
+                {%- else -%}
+                  Present
+                {%- endif -%}</h5>
             </dd>
           </dl>
 

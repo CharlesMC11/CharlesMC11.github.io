@@ -35,14 +35,8 @@ jobs:
             -   name: Setup uv & Python
                 uses: ./.github/actions/setup
 
-            -   name: Setup Project
-                run: uv sync --no-dev
-
             -   name: Build Pages
                 run: make
-
-            -   name: Setup Pages
-                uses: actions/configure-pages@v5
 
             -   name: Upload artifact
                 uses: actions/upload-pages-artifact@v3

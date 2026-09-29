@@ -21,4 +21,8 @@ $(BUILD_DIR)/%.html: $(TEMPLATES_DIR)/%.html.jinja $(GLOBAL_DEPS)
 	uv run build_page $(<F)
 
 $(BUILD_DIR)/style.css: ./src/static/style.css.jinja
-	cp -f $< $@
+	cp -fv $< $@
+
+check:
+	@uvx ruff check .
+	@uvx ruff format --check .
