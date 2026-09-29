@@ -7,8 +7,8 @@ requires-python = ">=3.14"
 dependencies = []
 
 [project.scripts]
-render_template = "build:render_template"
-render_cv = "build:render_cv"
+build_page = "build:build_page"
+build_cv = "build:build_cv"
 
 [dependency-groups]
 dev = [

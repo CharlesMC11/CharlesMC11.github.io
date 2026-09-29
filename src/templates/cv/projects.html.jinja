@@ -32,10 +32,10 @@
 
             {# TODO: Perhaps extract this into its own `.jinja` template? #}
             <dd class="cv__date-container"><h5><span
-              class="cv__exp-date">{{- project.start_date | date -}}</span>–<span
+              class="cv__exp-date">{{- project.start_date | date_fmt -}}</span>–<span
               class="cv__exp-date">
             {%- if project.end_date -%}
-              {{- project.end_date | date -}}
+              {{- project.end_date | date_fmt -}}
             {%- else -%}
               Present
             {%- endif -%}</span></h5>
