@@ -18,6 +18,8 @@ ENV = Environment(
 )
 
 
+YEAR = date.today().year
+
 # Public functions
 
 
@@ -25,7 +27,7 @@ def render_template() -> None:
     """Render a template whose filename is given at the CLI."""
 
     filename = Path(sys.argv[1])
-    content = ENV.get_template(str(filename)).render()
+    content = ENV.get_template(str(filename)).render(year=YEAR)
     (BUILD_DIR / filename.stem).write_text(_minify(content))
 
 
@@ -33,6 +35,7 @@ def render_cv() -> None:
     """Render the CV page."""
 
     content = ENV.get_template("cv/all.html.jinja").render(
+        year=YEAR,
         experience=_experience(),
         projects=_load_sorted_yaml("projects.yaml"),
         skills=_load_yaml("skills.yaml"),
