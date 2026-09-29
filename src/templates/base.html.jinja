@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="author" content="{{- socials.brand | trim -}}"/>
-  <title>{{- socials.brand | trim -}}</title>
+  <meta name="author" content="{{- socials.full_name | trim -}}"/>
+  <title>{{- socials.full_name | trim -}}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link
@@ -22,7 +22,7 @@
   <section class="brand" id="brand">
     <a class="brand__link" href="index.html">
       <h1
-        class="brand__name courier-prime-bold">{{- socials.brand | trim -}}</h1>
+        class="brand__name courier-prime-bold">{{- socials.full_name | trim -}}</h1>
       <h2 class="brand__title">Programmer | Technical Artist |
         Photographer</h2>
     </a>
@@ -48,7 +48,7 @@
     <ul class="navbar">
       <li class="navbar__item">
         <a class="navbar__link" href="mailto:{{- socials.email | trim -}}"
-           title="Send an email to {{- brand | trim -}}">
+           title="Send an email to {{- socials.full_name | trim -}}">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </li>
@@ -80,7 +80,7 @@
   </section>
 
   <section class="footer__copyright">
-    <p>© 2024–{{- year }} {{ socials.brand | trim -}}</p>
+    <p>© 2024–{{- current_year }} {{ socials.full_name | trim -}}</p>
     <p>Generated with Python, Jinja, and Make. Hosted on GitHub Pages.</p>
   </section>
 </footer>
