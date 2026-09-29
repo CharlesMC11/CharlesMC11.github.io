@@ -14,6 +14,8 @@
           <dd class="cv__date-container"><h5
             class="cv__exp-date">{{- institution.end_date | date_fmt -}}</h5>
           </dd>
+          {%- if institution.honors -%}
+            <dd><h4><i>{{- institution.honors | trim -}}</i></h4></dd>
           {%- endif -%}
         </dl>
 
