@@ -1,19 +1,28 @@
 [project]
-name = "python"
-version = "0.3.0"
-description = "My portfolio website"
+name = "portfolio-site-compiler"
+version = "1.1"
+description = "My portfolio website compiler"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = [
-    "flask>=3.1.2",
-    "mypy>=1.19.0",
-    "python-dotenv>=1.2.1",
-]
+dependencies = []
 
 [dependency-groups]
-prod = [
-    "gunicorn>=23.0.0",
+dev = [
+    "jinja2>=3.1.6",
+    "mypy>=2.3.1",
+    "pyyaml>=6.0.3",
+    "ruff>=0.14.10",
+    "types-pyyaml>=6.0.12.20260906",
 ]
 
 [tool.ruff]
-line-length = 80
+indent-width = 4
+line-length = 79
+
+[tool.ruff.format]
+docstring-code-format = true
+indent-style = "space"
+quote-style = "double"
+
+[tool.ruff.lint]
+select = ["I"]

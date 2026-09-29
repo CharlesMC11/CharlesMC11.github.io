@@ -1,18 +1,17 @@
 .env
 
+.ruff_cache/
+.venv/
 __pycache__/
 *.pyc
 .python-version
-.venv
 
+build/
 *.png
 *.sqlite3
-
-.ruff_cache/
+*.webp
 
 .idea/
 .vscode/
 
 .DS_Store
-
-static/html/

@@ -1,9 +1,11 @@
-*      text=auto
+*       text=auto
 
-*.css  text diff=css
-*.html text diff=html     linguist-language=django
-*.md   text diff=markdown
-*.py   text diff=python
-*.sql  text               linguist-language=SQL    linguist-detectable=true
+*.css   text diff=css
+*.jinja text diff=html     linguist-language=django
+*.md    text diff=markdown
+*.py    text diff=python
+*.sql   text               linguist-language=SQL    linguist-detectable=true
+*.yaml  text
+*.yml   text
 
-.git*  text
+.git*   text

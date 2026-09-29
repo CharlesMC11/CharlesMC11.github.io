@@ -1,0 +1,32 @@
+- institution: De Anza College
+  start_date: 2016-04-01
+  end_date: 2018-08-24
+  concentrations:
+      - degree: A.A.
+        name: "Film/TV: Animation"
+      - degree: A.A.
+        name: Liberal Arts ‐ Arts & Letters Emphasis
+  award: magna cum laude
+
+- institution: San José State University
+  start_date: 2018-08-01
+  end_date: 2023-05-26
+  concentrations:
+      - degree: B.F.A.
+        name: Animation & Illustration
+  award: magna cum laude
+
+- institution: De Anza College
+  start_date: 2024-07-01
+  end_date: 2026-06-26
+  concentrations:
+      - degree: A.A.
+        name: Systems Programming
+  award: magna cum laude
+  certificates:
+      - concentration: Unix/Linux Operating System
+        award: with Honors
+      - concentration: Programming in C/C++
+        award: with Honors
+      - concentration: Programming in Python
+        award: with Honors

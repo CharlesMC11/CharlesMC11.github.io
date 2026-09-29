@@ -1,0 +1,30 @@
+<section id="education">
+    <h2 class="h1">Education</h2>
+
+    <ul class="cv__list-container">
+        {%- for institution in education -%}
+            <li class="cv__list-item">
+            <span class="cv__date-container"><h3
+                class="h2 cv__subheading cv__school-name">
+                {{- institution.institution -}}
+                {%- if institution.award -%}
+                    <span>{{ institution.award }}</span>{%- endif -%}
+                </h3><span
+                class="cv__exp-date">{{- institution.end_date -}}</span></span>
+
+
+            <ul>{%- for concentration in institution.concentrations %}
+                <li class="cv__list-item cv__concentration">{{- concentration.degree }}&nbsp;{{ concentration.name -}}</li
+                >
+            {%- endfor -%}
+            </ul>
+
+            {%- if institution.certificates -%}
+                {%- for cert in institution.certificates -%}
+                    {{ cert.concentration }}
+                {% endfor %}{%- endif -%}
+
+
+        {%- endfor -%}
+    </ul>
+</section>

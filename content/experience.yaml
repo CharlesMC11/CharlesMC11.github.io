@@ -1,0 +1,54 @@
+- company: San José State University
+  roles:
+      - name: Animation & Illustration Club Photographer
+        start_date: 2018-09-10
+        end_date: 2023-05-24
+        highlights:
+            - Documented key moments during club activities, publishing 10–20 edited photos within a week
+
+      - name: CG Rigging Courses Teaching Assistant
+        start_date: 2023-01-25
+        end_date: 2023-05-15
+        highlights:
+            - Answered 20+ students’ questions regarding assignments and lectures
+            - Mentored students through debugging complex rigging, weighting, and constraint bottlenecks
+
+- company: FanimeCon
+  roles:
+      - name: Cosplay Photographer
+        start_date: 2024-04-21
+        end_date: 2025-08-08
+        highlights:
+            - Photographed cosplay groups and individuals, capturing dynamic poses and scenes, and delivered 1000+ edited photos within a month after each event
+
+- company: Bodhi Meditation Silicon Valley USA
+  roles:
+      - name: Volunteer Photographer
+        start_date: 2024-05-11
+        end_date: 2024-08-18
+        highlights:
+            - Captured weekend special events for promotional and marketing materials, delivering 100+ edited photos within a 1‑week turnaround
+
+- company: De Anza College
+  roles:
+      - name: Film/TV Department Instructional Assistant
+        start_date: 2024-10-01
+        end_date: 2025-12-12
+        highlights:
+            - Mentored 20+ students in learning and troubleshooting animation software, and created guides and demos for using film and animation production equipment
+            - Checked on and provided constructive feedback to students’ work during lab time
+            - Facilitated film production equipment checkouts, returns, and inventory
+
+      - name: CompTechS intern
+        start_date: 2026-01-14
+        end_date: 2026-02-25
+        highlights:
+            - Performed checks on newly refurbished laptops and installed productivity software
+
+- company: JCPenney Portraits by Lifetouch
+  roles:
+      - name: Seasonal Photographer, San Jose, CA
+        start_date: 2025-10-17
+        end_date: 2026-01-04
+        highlights:
+            - Guided customers in purchasing options that fit their needs, and assisted in appointment check‐ins and rescheduling, photo room preparations, and transaction data entry
