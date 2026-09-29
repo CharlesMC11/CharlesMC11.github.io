@@ -82,5 +82,11 @@ def _sort_by_date(entry: dict) -> tuple[date, date]:
     return entry.get("end_date", date.max), entry["start_date"]
 
 
+def _format_date(entry: date) -> str:
+    return entry.strftime("%b %Y")
+
+
+ENV.filters["date"] = _format_date
+
 if __name__ == "__main__":
     main()

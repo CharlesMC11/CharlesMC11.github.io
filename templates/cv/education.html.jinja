@@ -11,11 +11,11 @@
             </h3>
           </dt>
 
+          <dd class="cv__date-container"><h5
+            class="cv__exp-date">{{- institution.end_date | date -}}</h5></dd>
           {%- if institution.award -%}
             <dd><h4>{{- institution.award -}}</h4></dd>
           {%- endif -%}
-          <dd><h5 class="cv__date-container"><span
-            class="cv__exp-date">{{- institution.end_date -}}</span></h5></dd>
         </dl>
 
         <ul>

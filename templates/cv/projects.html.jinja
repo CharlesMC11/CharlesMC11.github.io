@@ -31,10 +31,10 @@
           <dl class="cv__sub-subheading">
             <dt><h4 class="cv__exp-role">{{- project.roles -}}</h4></dt>
             <dd class="cv__date-container"><h5><span
-              class="cv__exp-date">{{- project.start_date -}}</span>–<span
+              class="cv__exp-date">{{- project.start_date | date -}}</span>–<span
               class="cv__exp-date">
             {%- if project.end_date -%}
-              {{- project.end_date -}}
+              {{- project.end_date | date -}}
             {%- else -%}
               Present
             {%- endif -%}</span></h5>

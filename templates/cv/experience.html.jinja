@@ -12,8 +12,8 @@
               <dl class="cv__sub-subheading">
                 <dt><h4>{{- role.name -}}</h4></dt>
                 <dd class="cv__date-container"><h5><span
-                  class="cv__exp-date">{{- role.start_date -}}</span>–<span
-                  class="cv__exp-date">{{- role.end_date -}}</span>
+                  class="cv__exp-date">{{- role.start_date | date -}}</span>–<span
+                  class="cv__exp-date">{{- role.end_date | date -}}</span>
                 </h5>
                 </dd>
               </dl>
