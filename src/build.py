@@ -47,7 +47,7 @@ def build_cv() -> None:
         experience=_load_and_sort_experience(),
         projects=_load_and_sort_yaml("projects.yaml"),
         skills=_load_yaml("skills.yaml"),
-        education=_load_and_sort_yaml("education.yaml"),
+        education=_load_and_sort_education(),
         current_year=CURRENT_YEAR,
     )
     (BUILD_DIR / "cv.html").write_text(_minify(content))
@@ -68,6 +68,24 @@ def _load_and_sort_experience() -> list[dict[str, Any]]:
     for company in content:
         company["roles"].sort(key=_record_date_key, reverse=True)
     content.sort(key=lambda x: _record_date_key(x["roles"][0]), reverse=True)
+
+    return content
+
+
+def _load_and_sort_education() -> list[dict[str, Any]]:
+    """Parse `education.yaml` into a list of dictionaries."""
+
+    content = _load_yaml("education.yaml")
+    for institution in content:
+        concentrations = institution["concentrations"]
+
+        concentrations.sort(
+            key=lambda x: (x["award_date"], institution["start_date"]),
+            reverse=True,
+        )
+    content.sort(
+        key=lambda x: x["concentrations"][0]["award_date"], reverse=True
+    )
 
     return content
 
