@@ -12,9 +12,8 @@
           </dt>
 
           <dd class="cv__date-container"><h5
-            class="cv__exp-date">{{- institution.end_date | date -}}</h5></dd>
-          {%- if institution.award -%}
-            <dd><h4>{{- institution.award | trim -}}</h4></dd>
+            class="cv__exp-date">{{- institution.end_date | date_fmt -}}</h5>
+          </dd>
           {%- endif -%}
         </dl>
 

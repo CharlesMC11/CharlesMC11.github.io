@@ -102,6 +102,6 @@ def _minify(content: str) -> str:
     return minify_html.minify(content, minify_css=True, minify_js=True)
 
 
-ENV.filters["date"] = _date_filter
+JINJA_ENV.filters["date_fmt"] = _date_formatter
 
 SOCIALS = _load_yaml("socials.yaml")
