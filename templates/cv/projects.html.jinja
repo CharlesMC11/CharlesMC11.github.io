@@ -4,18 +4,17 @@
   <ul>
     {%- for project in projects -%}
     {%- set display_name = project.name or project.type -%}
+    {%- set link -%}
+    {%- if project.url -%}
+      <a class="h2 cv__project-link"
+         href="{{- project.url -}}">{{- display_name -}}</a>
+    {%- else -%}
+      {{- display_name -}}
+    {%- endif -%}
+    {%- endset -%}
 
     <li class="cv__list-item">
       <h3 class="h2 cv__subheading">
-        {%- set link -%}
-        {%- if project.url -%}
-          <a class="h2 cv__project-link"
-             href="{{- project.url -}}">{{- display_name -}}</a>
-        {%- else -%}
-          {{- display_name -}}
-        {%- endif -%}
-        {%- endset -%}
-
         {%- if project.is_media -%}
           <cite class="h2">{{- link | trim -}}</cite>
         {%- else -%}
