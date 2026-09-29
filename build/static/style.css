@@ -190,13 +190,28 @@ body * {
     padding: 0.25rem 0;
 }
 
-.cv__date-container::before {
-    content: ", ";
+.cv__subheading {
+    color: var(--primary-color);
 }
 
-.cv__list-container {
-    /*padding: 2rem 0;*/
+.cv__sub-subheading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
+
+.cv__project-link {
+    color: var(--primary-color-light);
+}
+
+
+/*.cv__date-container::before {*/
+/*    content: ", ";*/
+/*}*/
+
+/*.cv__list-container {*/
+/*    padding: 2rem 0;*/
+/*}*/
 
 .cv__list-item {
     list-style: none;
@@ -209,6 +224,10 @@ body * {
     flex-flow: row wrap;
     gap: 1rem;
     place-content: space-around space-around;
+}
+
+.cv__skills__container .h2 {
+    color: var(--primary-color);
 }
 
 /* About Me ******************************************************************/
