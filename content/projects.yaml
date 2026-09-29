@@ -115,17 +115,17 @@
         - Implemented a constrained bisection root‐finder and numerical Euler integrator
             utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation
             at  time steps
-        - Developed a Python pipeline utilizing Markdown, Jinja2, and Pandoc to compile
+        - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile
             knowledge base pages into HTML and PDF
 
 -   name: CharlesMC11.github.io / resumake
-    type: Personal Website & Static Site Generator
+    type: Personal Website / Static Site Generator
     is_media: false
     url: https://github.com/CharlesMC11/CharlesMC11.github.io.git
     roles: Developer, Maintainer
     start_date: 2024-09-24
     highlights:
-        - Engineered a lightweight static site generator utilizing YAML, Jinja, Python, and make
+        - Engineered a lightweight static site generator utilizing Python, Jinja, and Make
 
 -   name: sst (Screenshot Tagger)
     type: Automation Utility
