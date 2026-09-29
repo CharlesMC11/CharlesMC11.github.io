@@ -7,14 +7,14 @@
         <dl>
           <dt>
             <h3 class="h2 cv__subheading cv__school-name">
-              {{- institution.institution -}}
+              {{- institution.institution | trim -}}
             </h3>
           </dt>
 
           <dd class="cv__date-container"><h5
             class="cv__exp-date">{{- institution.end_date | date -}}</h5></dd>
           {%- if institution.award -%}
-            <dd><h4>{{- institution.award -}}</h4></dd>
+            <dd><h4>{{- institution.award | trim -}}</h4></dd>
           {%- endif -%}
         </dl>
 
@@ -22,7 +22,7 @@
           {%- for concentration in institution.concentrations -%}
             <li
               class="cv__list-item cv__concentration">
-              {{- concentration.degree -}}&nbsp;{{- concentration.name -}}</li>
+              {{- concentration.degree | trim -}}&nbsp;{{- concentration.name | trim -}}</li>
           {%- endfor -%}
 
           {%- if institution.certificates -%}
@@ -30,7 +30,7 @@
               <ul>
                 {%- for cert in institution.certificates -%}
                   <li
-                    class="cv__list-item cv__concentration">{{- cert.concentration -}}</li>
+                    class="cv__list-item cv__concentration">{{- cert.concentration | trim -}}</li>
                 {%- endfor -%}
               </ul>
             </li>
@@ -39,5 +39,6 @@
 
       </li>
     {%- endfor -%}
+
   </ul>
 </section>
