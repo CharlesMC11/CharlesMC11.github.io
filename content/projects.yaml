@@ -9,6 +9,19 @@
         - Animated a character and a prop across 4 weeks
         - Wrote MEL scripts for resetting rig controllers to their default positions
 
+-   type: World-Building Wiki & Simulation Solver
+    roles: Developer, Maintainer
+    start_date: 2022-02-01
+    highlights:
+        - Engineered a native C++23 nonlinear numerical solver exposed to Python via nanobind
+            to calculate non‐Newtonian state equations, system impedance models, and cumulative
+            energy requirements
+        - Implemented a constrained bisection root‐finder and numerical Euler integrator
+            utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation
+            at  time steps
+        - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile
+            knowledge base pages into HTML and PDF
+
 -   name: Jet‐Jacked
     type: 3D Animated Sequence
     is_media: true
@@ -80,17 +93,6 @@
         - Served as the technical consultant and support to the director and department
             leads
 
--   name: Spirit Driver
-    type: Visual Novel
-    is_media: true
-    url: https://noodledonut.itch.io/spirit-driver
-    roles: Programmer
-    start_date: 2024-09-01
-    end_date: 2024-09-30
-    highlights:
-        - Programmed dialogue and menu scripts in Ren'Py for a visual novel that won 1st place
-            at the Spooktober 6th Annual Visual Novel Jam
-
 -   name: Flux Fantasia
     type: 3D Animated Short Film
     is_media: true
@@ -104,23 +106,19 @@
         - Diagnosed and optimized dynamic cloth simulation and collision physics to prevent
             mesh intersection during rapid character movement
 
--   type: World-Building Wiki & Simulation Solver
-    is_media: false
-    roles: Developer, Maintainer
-    start_date: 2022-02-01
+-   name: Spirit Driver
+    type: Visual Novel
+    is_media: true
+    url: https://noodledonut.itch.io/spirit-driver
+    roles: Programmer
+    start_date: 2024-09-01
+    end_date: 2024-09-30
     highlights:
-        - Engineered a native C++23 nonlinear numerical solver exposed to Python via nanobind
-            to calculate non‐Newtonian state equations, system impedance models, and cumulative
-            energy requirements
-        - Implemented a constrained bisection root‐finder and numerical Euler integrator
-            utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation
-            at  time steps
-        - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile
-            knowledge base pages into HTML and PDF
+        - Programmed dialogue and menu scripts in Ren'Py for a visual novel that won 1st place
+            at the Spooktober 6th Annual Visual Novel Jam
 
 -   name: CharlesMC11.github.io / resumake
     type: Personal Website / Static Site Generator
-    is_media: false
     url: https://github.com/CharlesMC11/CharlesMC11.github.io.git
     roles: Developer, Maintainer
     start_date: 2024-09-24
@@ -129,7 +127,6 @@
 
 -   name: sst (Screenshot Tagger)
     type: Automation Utility
-    is_media: false
     url: https://github.com/CharlesMC11/sst.git
     roles: Developer, Maintainer
     start_date: 2025-05-05
@@ -141,8 +138,14 @@
             configurations into and compile the shell artifacts into Zsh word code, deployed
             to a transient RAM disk
 
+-   name: File Organizer
+    type: Automation Script
+    url: https://github.com/CharlesMC11/file-organizer.git
+    roles: Developer
+    start_date: 2025-07-13
+    end_date: 2026-01-07
+
 -   type: GBA-Inspired Sprite Engine
-    is_media: false
     url: https://github.com/CharlesMC11/test-sprite-engine.git
     roles: Developer
     start_date: 2026-02-01
@@ -156,3 +159,11 @@
             bit pack custom pixel formats, align binaries for 16‑byte SIMD loads, and generate
             a deduplicated master atlas loaded via a RAII‐wrapped mmap manager and C++ asset
             enum headers for easy atlas lookup
+
+-   name: Ensnared Bloom
+    type: Visual Novel
+    is_media: true
+    url: https://noodledonut.itch.io/ensnared-bloom
+    roles: Storyboard Assistance
+    start_date: 2026-09-14
+    end_date: 2026-09-21

@@ -25,11 +25,12 @@
           &nbsp;{{- project.type | trim -}}
         {%- endif -%}
       </h3>
-
       <ul>
         <li class="cv__list-item">
           <dl class="cv__sub-subheading">
             <dt><h4 class="cv__exp-role">{{- project.roles | trim -}}</h4></dt>
+
+            {# TODO: Perhaps extract this into its own `.jinja` template? #}
             <dd class="cv__date-container"><h5><span
               class="cv__exp-date">{{- project.start_date | date -}}</span>–<span
               class="cv__exp-date">
