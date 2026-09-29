@@ -1,6 +1,7 @@
 from datetime import date
 from pathlib import Path
 
+import minify_html
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
@@ -12,7 +13,9 @@ CONTENT_DIR = SRC_DIR / "content"
 
 BUILD_DIR = SRC_DIR / "build"
 
-ENV = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
+ENV = Environment(
+    trim_blocks=True, lstrip_blocks=True, loader=FileSystemLoader(TEMPLATE_DIR)
+)
 
 
 # Public function
@@ -31,8 +34,13 @@ def main() -> None:
 def render(filename: str) -> None:
     template = ENV.get_template(filename + ".jinja")
     content = template.render()
+    content = minify(content)
 
     (BUILD_DIR / filename).write_text(content)
+
+
+def minify(content: str) -> str:
+    return minify_html.minify(content, minify_css=True, minify_js=True)
 
 
 def render_cv() -> None:
@@ -44,6 +52,7 @@ def render_cv() -> None:
         skills=load_yaml("skills.yaml"),
         education=load_data("education.yaml"),
     )
+    content = minify(content)
 
     (BUILD_DIR / "cv.html").write_text(content)
 
