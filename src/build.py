@@ -63,7 +63,7 @@ def build_cv() -> None:
         education=_load_and_sort_education(),
         current_year=CURRENT_YEAR,
     )
-    (BUILD_DIR / "cv.html").write_text(_minify(content))
+    (BUILD_DIR / "cv.html").write_text(_minify(content), encoding="utf-8")
 
 
 def build_css() -> None:
@@ -197,7 +197,7 @@ def _load_and_sort_yaml(
 
 
 def _load_yaml(filename: str) -> list[dict[str, Any]] | dict[str, Any]:
-    with (CONTENT_DIR / filename).open() as f:
+    with (CONTENT_DIR / filename).open(encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
