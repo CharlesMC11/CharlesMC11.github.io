@@ -4,8 +4,8 @@ CV_CONTENT_DIR	:= $(CONTENT_DIR)/experience.yaml \
 					$(CONTENT_DIR)/education.yaml
 
 TEMPLATES_DIR	:= ./src/templates
-BASE_TEMPLATE	:= $(TEMPLATES_DIR)/base.html.jinja
-CV_TEMPLATES	:= $(wildcard $(TEMPLATES_DIR)/cv/*.jinja)
+BASE_TEMPLATE	:= $(TEMPLATES_DIR)/_base.html.jinja
+CV_TEMPLATES	:= $(TEMPLATES_DIR)/cv.html.jinja $(wildcard $(TEMPLATES_DIR)/cv/*.jinja)
 
 GLOBAL_DEPS 	:= $(CONTENT_DIR)/socials.yaml $(BASE_TEMPLATE) ./src/build.py
 

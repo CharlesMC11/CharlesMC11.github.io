@@ -1,66 +1,66 @@
 Programming Languages:
-    - C++
-    - Objective‑C++
-    - C
-    - Assembly (AArch64, x86_64)
-    - Python
-    - JavaScript (ECMAScript)
-    - MEL (Maya Embedded Language)
+  - C++
+  - Objective‑C++
+  - C
+  - Assembly (AArch64, x86_64)
+  - Python
+  - JavaScript (ECMAScript)
+  - MEL (Maya Embedded Language)
 
 Systems & HPC:
-    - SIMD (Arm Neon Intrinsics)
-    - Memory Management (RAII, SoA, mmap, Custom Allocators)
-    - Concurrency (File‐based Locks)
-    - Custom Binary Formats
+  - SIMD (Arm Neon Intrinsics)
+  - Memory Management (RAII, SoA, mmap, Custom Allocators)
+  - Concurrency (File‐based Locks)
+  - Custom Binary Formats
 
 Computer Graphics & Vision:
-    - Metal
-    - OpenCV
-    - Image Processing
-    - Texture Packing & Atlasing
-    - Asset Pipelines
+  - Metal
+  - OpenCV
+  - Image Processing
+  - Texture Packing & Atlasing
+  - Asset Pipelines
 
 Build & Dev Tools:
-    - Zsh/Bash
-    - CMake
-    - Make
-    - Git
-    - nanobind
-    - pytest
+  - Zsh/Bash
+  - CMake
+  - Make
+  - Git
+  - nanobind
+  - pytest
 
 Libraries & Utilities:
-    - NumPy
-    - SQLite
-    - Flask
-    - Jinja2
-    - launchd
-    - ExifTool
-    - Pandoc
+  - NumPy
+  - SQLite
+  - Flask
+  - Jinja2
+  - launchd
+  - ExifTool
+  - Pandoc
 
 Platforms & Environments:
-    - macOS
-    - Unix/Linux (Debian, CentOS)
-    - Windows
-    - Virtualization (UTM)
+  - macOS
+  - Unix/Linux (Debian, CentOS)
+  - Windows
+  - Virtualization (UTM)
 
 DCC & Creative Tools:
-    - Autodesk Maya
-    - SideFX Houdini
-    - Blender
-    - ZBrush
-    - Unity
-    - Arnold Renderer
-    - Substance 3D Painter
-    - Capture One Pro
-    - Lightroom
-    - Photoshop
-    - Premiere Pro
-    - After Effects
-    - DaVinci Resolve
-    - Toon Boom Harmony
-    - Animate/Flash
-    - Clip Studio Paint
+  - Autodesk Maya
+  - SideFX Houdini
+  - Blender
+  - ZBrush
+  - Unity
+  - Arnold Renderer
+  - Substance 3D Painter
+  - Capture One Pro
+  - Lightroom
+  - Photoshop
+  - Premiere Pro
+  - After Effects
+  - DaVinci Resolve
+  - Toon Boom Harmony
+  - Animate/Flash
+  - Clip Studio Paint
 
 Spoken Languages:
-    - Filipino (Tagalog; Native)
-    - English (Fluent)
+  - Filipino (Tagalog; Native)
+  - English (Fluent)

@@ -58,7 +58,7 @@ def build_page() -> None:
 def build_cv() -> None:
     """Aggregate the CV data sources and compile the unified CV page."""
 
-    content = JINJA_ENV.get_template("cv/cv.html.jinja").render(
+    content = JINJA_ENV.get_template("cv.html.jinja").render(
         socials=_load_yaml("socials.yaml"),
         experience=_load_and_sort_experience(),
         projects=_load_and_sort_yaml("projects.yaml"),

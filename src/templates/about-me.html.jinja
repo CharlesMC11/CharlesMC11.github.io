@@ -1,23 +1,18 @@
-{% extends "base.html.jinja" %}
+{% extends "_base.html.jinja" %}
 
 {% block content %}
   <article class="about-me__container">
-    <img class="about-me__img"
-         src="portrait.png"
-         alt="A monochrome photograph of {{ socials.full_name | trim -}}"/>
+    <img class="about-me__img" src="/portrait.png" alt="A monochrome photograph of {{ socials.full_name | trim -}}"/>
 
     <section id="about-me">
       <h2 class="h1">About Me</h2>
       <p class="copy-text">
-        Hello, hello! I'm Charles (he/him), a recent graduate based in the Bay
-        Area, California. I firmly believe that art and technology go hand in
-        hand in creating authentic stories and impactful experiences. I love
-        learning new things and solving problems, and I hope to use my skills
-        to realize people's artistic visions.
+        Hello, hello! I'm Charles (he/him), a recent graduate based in the Bay Area, California. I firmly believe that
+        art and technology go hand in hand in creating authentic stories and impactful experiences. I love learning new
+        things and solving problems, and I hope to use my skills to realize people's artistic visions.
       </p>
       <p class="copy-text">
-        In my free time, I love writing journals, taking photos, and building
-        Legos.
+        In my free time, I love writing journals, taking photos, and building Legos.
       </p>
     </section>
   </article>

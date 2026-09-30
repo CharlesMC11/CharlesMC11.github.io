@@ -14,20 +14,14 @@
             <li class="cv__list-item">
               <dl class="cv__sub-subheading">
                 <dt><h4 class="cv__degree-container">
-                  <span
-                    class="cv__degree">{{- concentration.degree | trim -}}
-                  </span> in <span
-                  class="cv__concentration">{{- concentration.name | trim -}}</span>
-                </h4></dt>
+                  <span class="cv__degree">{{- concentration.degree | trim -}}</span> in <span
+                  class="cv__concentration">{{- concentration.name | trim -}}</span></h4></dt>
 
-                <dd class="cv__date-container">
-                  <h5>{{ concentration.award_date | date_fmt }}</h5>
-                </dd>
+                <dd class="cv__date-container"><h5>{{ concentration.award_date | date_fmt }}</h5></dd>
               </dl>
 
               {% if concentration.honors %}
-                <p class="cv__edu-honors">{{- format_honors(
-                concentration.honors) -}}</p>
+                <p class="cv__edu-honors">{{- format_honors(concentration.honors) -}}</p>
               {% endif %}
             </li>
 

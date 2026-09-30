@@ -3,8 +3,7 @@
 
   <ul class="cv__skills-container" id="cv__skills">
     {% for category, skills in skills.items() %}
-      <li class="cv__list-item">
-        <h3 class="h2">{{- category | trim -}}</h3>
+      <li class="cv__list-item"><h3 class="h2">{{- category | trim -}}</h3>
 
         <ul>
           {% for skill in skills %}

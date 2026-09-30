@@ -3,38 +3,30 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="author" content="{{- socials.full_name | trim -}}"/>
-  <title>{{- socials.full_name | trim -}}</title>
+  <meta name="author" content="{{- socials.brand | trim -}}"/>
+  <title>{{- socials.brand | trim -}}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap"
-    rel="stylesheet"/>
-  <script src="https://kit.fontawesome.com/ebd1029440.js"
-          crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/ebd1029440.js" crossorigin="anonymous">
   </script>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="/style.css"/>
   {% block head %}{% endblock head %}
 </head>
 
 <body>
 <header>
   <section class="brand" id="brand">
-    <a class="brand__link" href="index.html">
-      <h1
-        class="brand__name courier-prime-bold">{{- socials.full_name | trim -}}</h1>
-      <h2 class="brand__title">Programmer | Technical Artist |
-        Photographer</h2>
+    <a class="brand__link" href="/">
+      <h1 class="brand__name courier-prime-bold">{{- socials.brand | trim -}}</h1>
+      <h2 class="brand__title">{{- socials.tagline | trim -}}</h2>
     </a>
   </section>
   <nav class="navbar__container">
     <ul class="navbar">
-      <li class="navbar__item">
-        <a class="navbar__link" href="cv.html">Curriculum Vitae</a>
-      </li>
-      <li class="navbar__item">
-        <a class="navbar__link" href="about-me.html">About Me</a>
-      </li>
+      <li class="navbar__item"><a class="navbar__link" href="/">Home</a></li>
+      <li class="navbar__item"><a class="navbar__link" href="/cv.html">Curriculum Vitae</a></li>
+      <li class="navbar__item"><a class="navbar__link" href="/about-me.html">About Me</a></li>
     </ul>
   </nav>
   <hr/>
@@ -48,30 +40,27 @@
     <ul class="navbar">
       <li class="navbar__item">
         <a class="navbar__link" href="mailto:{{- socials.email | trim -}}"
-           title="Send an email to {{ socials.full_name | trim -}}">
+           title="Send an email to {{ socials.brand | trim -}}">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </li>
 
       <li class="navbar__item">
-        <a class="navbar__link"
-           href="https://www.linkedin.com/in/{{- socials.linkedin | trim -}}"
+        <a class="navbar__link" href="https://www.linkedin.com/in/{{- socials.linkedin | trim -}}"
            title="Open LinkedIn in a new tab" target="_blank">
           <i class="fa-brands fa-linkedin"></i>
         </a>
       </li>
 
       <li class="navbar__item">
-        <a class="navbar__link"
-           href="https://github.com/{{- socials.github | trim -}}"
+        <a class="navbar__link" href="https://github.com/{{- socials.github | trim -}}"
            title="Open GitHub in a new tab" target="_blank">
           <i class="fa-brands fa-github-alt"></i>
         </a>
       </li>
 
       <li class="navbar__item">
-        <a class="navbar__link"
-           href="https://instagram.com/{{- socials.instagram | trim -}}"
+        <a class="navbar__link" href="https://instagram.com/{{- socials.instagram | trim -}}"
            title="Open Instagram in a new tab" target="_blank">
           <i class="fa-brands fa-instagram"></i>
         </a>
@@ -80,8 +69,8 @@
   </section>
 
   <section class="footer__copyright">
-    <p>© 2024–{{- current_year }} {{ socials.full_name | trim -}}</p>
-    <p>Generated with Python, Jinja, and Make. Hosted on GitHub Pages.</p>
+    <p>© 2024–{{- current_year }} {{ socials.brand | trim -}}</p>
+    <p>Generated with Python, Jinja, and Make. Hosted on GitHub Pages.</p>
   </section>
 </footer>
 </body>

@@ -10,8 +10,7 @@
 
         <ul>
           {% for role in company.roles %}
-            {{ timed_entry(role.name, role.start_date, role.end_date,
-            role.highlights) }}
+            {{ timed_entry(role.name, role.start_date, role.end_date, role.highlights) }}
           {% endfor %}
         </ul>
 
