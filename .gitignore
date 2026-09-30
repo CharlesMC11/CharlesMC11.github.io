@@ -7,6 +7,8 @@ __pycache__/
 *.pyc
 
 build/
+*.jpeg
+*.jpg
 *.png
 *.sqlite3
 *.webp
