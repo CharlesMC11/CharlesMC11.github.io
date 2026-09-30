@@ -10,7 +10,7 @@ import yaml
 from coloraide import Color
 from jinja2 import Environment, FileSystemLoader
 
-SRC_DIR = Path(__file__).parent
+SRC_DIR = Path(__file__).resolve().parent
 TEMPLATE_DIR = SRC_DIR / "templates"
 STATIC_DIR = SRC_DIR / "static"
 CONTENT_DIR = SRC_DIR.parent / "content"
@@ -43,12 +43,12 @@ def build_page() -> None:
     Expects `sys.argv[1]` to be the filename of the template to render.
     """
 
-    template_name = Path(sys.argv[1]).name
-    content = JINJA_ENV.get_template(template_name).render(
-        socials=SOCIALS, current_year=CURRENT_YEAR
+    template_path = Path(sys.argv[1])
+    content = JINJA_ENV.get_template(str(template_path)).render(
+        socials=_load_yaml("socials.yaml"), current_year=CURRENT_YEAR
     )
-    (BUILD_DIR / template_name.removesuffix(".jinja")).write_text(
-        _minify(content)
+    (BUILD_DIR / template_path.name.removesuffix(".jinja")).write_text(
+        _minify(content), encoding="utf-8"
     )
 
 
@@ -56,7 +56,7 @@ def build_cv() -> None:
     """Aggregate the CV data sources and compile the unified CV page."""
 
     content = JINJA_ENV.get_template("cv/all.html.jinja").render(
-        socials=SOCIALS,
+        socials=_load_yaml("socials.yaml"),
         experience=_load_and_sort_experience(),
         projects=_load_and_sort_yaml("projects.yaml"),
         skills=_load_yaml("skills.yaml"),
