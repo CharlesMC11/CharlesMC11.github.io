@@ -1,0 +1,44 @@
+{%- macro project_link(type, name=None, url=None) -%}
+  {%- set display_name = name or type -%}
+  {%- if url -%}
+    <a class="h2 cv__project-link"
+       href="{{- url | trim -}}">{{- display_name | trim -}}</a>
+  {%- else -%}
+    {{- display_name | trim -}}
+  {%- endif -%}
+{%- endmacro -%}
+
+{% macro timed_entry(name, start_date, end_date=None, highlights=None) %}
+  <li class="cv__list-item">
+    <dl class="cv__sub-subheading">
+      <dt><h4>{{ name | trim }}</h4></dt>
+
+      <dd class="cv__date-container">
+        <h5>{{- start_date | date_fmt -}}–
+          {%- if end_date -%}
+            {{- end_date | date_fmt -}}
+          {%- else -%}
+            Present
+          {%- endif -%}</h5>
+      </dd>
+    </dl>
+
+    {% if highlights %}
+      <ul>
+        {% for highlight in highlights %}
+          <li class="cv__list-item"><p class="copy-text">
+            {{ highlight | trim }}
+          </p></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+{% endmacro %}
+
+{%- macro format_honors(honors) -%}
+  {%- if "cum laude" in honors -%}
+    <i lang="la">{{- honors | trim -}}</i>
+  {%- else -%}
+    {{- honors | trim -}}
+  {%- endif -%}
+{%- endmacro -%}
