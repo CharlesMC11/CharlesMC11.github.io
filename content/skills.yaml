@@ -32,7 +32,7 @@ Libraries & Utilities:
   - NumPy
   - SQLite
   - Flask
-  - Jinja2
+  - Jinja
   - launchd
   - ExifTool
   - Pandoc
