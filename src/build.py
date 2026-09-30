@@ -102,15 +102,22 @@ def _load_and_sort_education() -> list[dict[str, Any]]:
     """Parse `education.yaml` into a list of dictionaries."""
 
     content = _load_yaml("education.yaml")
-    for institution in content:
-        concentrations = institution["concentrations"]
 
-        concentrations.sort(
-            key=lambda x: (x["award_date"], institution["start_date"]),
+    for institution in content:
+        try:
+            start_date = institution["start_date"]
+        except KeyError:
+            display = institution.get("institution", "Unknown Institution")
+            raise KeyError(f"Missing 'start_date' in record: '{display}'")
+
+        institution["concentrations"].sort(
+            key=lambda x: (x.get("award_date", date.max), start_date),
             reverse=True,
         )
+
     content.sort(
-        key=lambda x: x["concentrations"][0]["award_date"], reverse=True
+        key=lambda x: x["concentrations"][0].get("award_date", date.max),
+        reverse=True,
     )
 
     return content
@@ -163,9 +170,19 @@ def _record_date_key(record: dict[str, date | Any]) -> tuple[date, date]:
     :param record: A record from a YAML file.
 
     :returns: A tuple containing the end and start dates of a record.
+
+    :raises KeyError: If the record does not contain a `start_date`.
     """
 
-    return record.get("end_date", date.max), record["start_date"]
+    try:
+        return record.get("end_date", date.max), record["start_date"]
+    except KeyError:
+        display = (
+            record.get("company")
+            or record.get("name")
+            or record.get("roles", "Unknown Record")
+        )
+        raise KeyError(f"Missing 'start_date' in record: '{display}'")
 
 
 def _load_and_sort_yaml(
