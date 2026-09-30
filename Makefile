@@ -20,8 +20,8 @@ $(BUILD_DIR)/cv.html: $(CV_TEMPLATES) $(CV_CONTENT_DIR) $(GLOBAL_DEPS)
 $(BUILD_DIR)/%.html: $(TEMPLATES_DIR)/%.html.jinja $(GLOBAL_DEPS)
 	uv run build_page $(<F)
 
-$(BUILD_DIR)/style.css: ./src/static/style.css.jinja
-	cp -fv $< $@
+$(BUILD_DIR)/style.css: ./src/static/style.css.jinja ./src/build.py
+	uv run build_css
 
 check:
 	@uvx ruff check .
