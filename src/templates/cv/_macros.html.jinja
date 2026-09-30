@@ -14,12 +14,7 @@
       <dt><h4>{{ name | trim }}</h4></dt>
 
       <dd class="cv__date-container">
-        <h5>{{- start_date | date_fmt -}}–
-          {%- if end_date -%}
-            {{- end_date | date_fmt -}}
-          {%- else -%}
-            Present
-          {%- endif -%}</h5>
+        <h5>{{- start_date | date_fmt -}}–{{- end_date | date_fmt -}}</h5>
       </dd>
     </dl>
 
