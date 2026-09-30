@@ -12,6 +12,7 @@ from jinja2 import Environment, FileSystemLoader
 
 SRC_DIR = Path(__file__).parent
 TEMPLATE_DIR = SRC_DIR / "templates"
+STATIC_DIR = SRC_DIR / "static"
 CONTENT_DIR = SRC_DIR.parent / "content"
 
 BUILD_DIR = SRC_DIR.parent / "build"
@@ -185,6 +186,3 @@ def _load_yaml(filename: str) -> list[dict[str, Any]] | dict[str, Any]:
 
 def _minify(content: str) -> str:
     return minify_html.minify(content, minify_css=True, minify_js=True)
-
-
-SOCIALS = _load_yaml("socials.yaml")
