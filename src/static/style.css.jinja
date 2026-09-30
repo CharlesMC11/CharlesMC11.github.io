@@ -1,25 +1,25 @@
 :root {
-  --primary-color: hsl(210 100% 25%);
-  --primary-color-dark: hsl(from var(--primary-color) h s calc(l / 1.25));
-  --primary-color-light: hsl(from var(--primary-color) h s calc(l * 3));
-  --primary-color-transparent: hsl(var(--primary-color-light) / 0.75);
+  --primary-color: {{ primary_color }};
+  --primary-color-dark: {{ primary_dark }};
+  --primary-color-light: {{ primary_light }};
+  --primary-color-transparent: {{ primary_transparent }};
 
   --primary-font-size: 1rem;
   --primary-line-height: 1.5;
 
   --primary-padding: 1rem;
 
-  --secondary-color: white;
-  --secondary-color-dark: hsl(0 0% 95%);
+  --secondary-color: {{ secondary_color }};
+  --secondary-color-dark: {{ secondary_dark }};
 
-  --tertiary-color: hsl(30 100% 75%);
-  --tertiary-color-light: hsl(from var(--tertiary-color) h calc(s / 3) 95%);
+  --tertiary-color: {{ tertiary_color }};
+  --tertiary-color-light: {{ tertiary_light }};
 
   --brand-title-font-size: calc(var(--primary-font-size) * 3);
   --brand-subtitle-font-size: var(--primary-font-size);
 }
 
-/* APIs ***********************************************************************/
+{# APIs ######################################################################}
 
 .courier-prime-bold {
   font-family: "Courier Prime", monospace;
@@ -27,7 +27,7 @@
   font-style: normal;
 }
 
-/* Globals ********************************************************************/
+{# Globals ###################################################################}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -70,7 +70,7 @@ p {
   font-size: calc(var(--primary-font-size) * 1.5);
 }
 
-/* Header/Footer *************************************************************/
+{# Header/Footer #############################################################}
 
 header, footer {
   background-color: var(--primary-color);
@@ -89,7 +89,7 @@ footer {
   text-align: center;
 }
 
-/* Brand *********************************************************************/
+{# Brand #####################################################################}
 
 .brand {
   padding: 1rem;
@@ -116,7 +116,7 @@ footer {
   text-align: center;
 }
 
-/* Navbar *********************************************************************/
+{# Navbar ####################################################################}
 
 .navbar__container {
   margin: 0 auto;
@@ -155,7 +155,7 @@ footer .navbar__link:hover {
   color: var(--primary-color-light);
 }
 
-/* Main **********************************************************************/
+{# Main ######################################################################}
 
 main {
   background-color: var(--secondary-color);
@@ -165,7 +165,7 @@ main {
 }
 
 body * {
-  /*outline: 1px dotted gray;*/
+{#outline: 1px dotted gray;#}
 }
 
 .copy-text {
@@ -177,7 +177,7 @@ body * {
   justify-content: space-around;
 }
 
-/* Curriculum Vitae **********************************************************/
+{# Curriculum Vitae ##########################################################}
 
 .cv__container {
   align-content: center;
@@ -203,13 +203,14 @@ body * {
   color: var(--primary-color-light);
 }
 
-/*.cv__date-container::before {*/
-/*    content: ", ";*/
-/*}*/
+.cv__date-container * {
+  flex-direction: row-reverse;
+  justify-content: right;
+}
 
-/*.cv__list-container {*/
-/*    padding: 2rem 0;*/
-/*}*/
+{# .cv__list-container { #}
+{#  padding: 2rem 0; #}
+{# } #}
 
 .cv__list-item {
   list-style: none;
@@ -217,18 +218,24 @@ body * {
   padding: 0 0 0 2rem;
 }
 
-.cv__skills__container {
+.cv__skills-container {
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
   place-content: space-around space-around;
 }
 
-.cv__skills__container .h2 {
+.cv__skills-container .h2 {
   color: var(--primary-color);
 }
 
-/* About Me ******************************************************************/
+.cv__degree-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5ch;
+}
+
+{# About Me ##################################################################}
 
 .about-me__container {
   align-items: center;
@@ -246,7 +253,7 @@ body * {
   padding: 1rem 1rem 5rem;
 }
 
-/* @media *********************************************************************/
+{# @media ####################################################################}
 
 @media screen and (max-width: 900px) {
   :root {

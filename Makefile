@@ -4,10 +4,10 @@ CV_CONTENT_DIR	:= $(CONTENT_DIR)/experience.yaml \
 					$(CONTENT_DIR)/education.yaml
 
 TEMPLATES_DIR	:= ./src/templates
-BASE_TEMPLATE	:= $(TEMPLATES_DIR)/base.html.jinja
-CV_TEMPLATES	:= $(wildcard $(TEMPLATES_DIR)/cv/*.jinja)
+BASE_TEMPLATE	:= $(TEMPLATES_DIR)/_base.html.jinja
+CV_TEMPLATES	:= $(TEMPLATES_DIR)/cv.html.jinja $(wildcard $(TEMPLATES_DIR)/cv/*.jinja)
 
-GLOBAL_DEPS 	:= $(CONTENT_DIR)/socials.yaml $(BASE_TEMPLATE)
+GLOBAL_DEPS 	:= $(CONTENT_DIR)/socials.yaml $(BASE_TEMPLATE) ./src/build.py
 
 BUILD_DIR   	:= ./build
 
@@ -20,8 +20,8 @@ $(BUILD_DIR)/cv.html: $(CV_TEMPLATES) $(CV_CONTENT_DIR) $(GLOBAL_DEPS)
 $(BUILD_DIR)/%.html: $(TEMPLATES_DIR)/%.html.jinja $(GLOBAL_DEPS)
 	uv run build_page $(<F)
 
-$(BUILD_DIR)/style.css: ./src/static/style.css.jinja
-	cp -fv $< $@
+$(BUILD_DIR)/style.css: ./src/static/style.css.jinja ./src/build.py
+	uv run build_css
 
 check:
 	@uvx ruff check .

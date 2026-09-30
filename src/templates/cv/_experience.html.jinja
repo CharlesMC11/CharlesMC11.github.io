@@ -1,0 +1,20 @@
+{% from "cv/_macros.html.jinja" import timed_entry %}
+
+<section id="experience">
+  <h2 class="h1">Experience</h2>
+
+  <ul>
+    {% for company in experience %}
+      <li class="cv__list-item">
+        <h3 class="h2 cv__subheading">{{ company.company | trim }}</h3>
+
+        <ul>
+          {% for role in company.roles %}
+            {{ timed_entry(role.name, role.start_date, role.end_date, role.highlights) }}
+          {% endfor %}
+        </ul>
+
+      </li>
+    {% endfor %}
+  </ul>
+</section>

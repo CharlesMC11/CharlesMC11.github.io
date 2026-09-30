@@ -1,169 +1,141 @@
--   name: The H(a)unt
-    type: 3D Animated Sequence
-    is_media: true
-    roles: Technical Lead, Animator
-    start_date: 2021-10-25
-    end_date: 2021-12-15
-    highlights:
-        - Set up scene lights and render settings
-        - Animated a character and a prop across 4 weeks
-        - Wrote MEL scripts for resetting rig controllers to their default positions
+- name: The H(a)unt
+  type: 3D Animated Sequence
+  is_media: true
+  roles: Technical Lead, Animator
+  start_date: 2021-10-25
+  end_date: 2021-12-15
+  highlights:
+    - Set up scene lights and render settings
+    - Animated a character and a prop across 4 weeks
+    - Wrote MEL scripts for resetting rig controllers to their default positions
 
--   type: World-Building Wiki & Simulation Solver
-    roles: Developer, Maintainer
-    start_date: 2022-02-01
-    highlights:
-        - Engineered a native C++23 nonlinear numerical solver exposed to Python via nanobind
-            to calculate non‐Newtonian state equations, system impedance models, and cumulative
-            energy requirements
-        - Implemented a constrained bisection root‐finder and numerical Euler integrator
-            utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation
-            at 0.0001 s time steps
-        - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile
-            knowledge base pages into HTML and PDF
+- type: World-Building Wiki & Simulation Solver
+  roles: Developer, Maintainer
+  start_date: 2022-02-01
+  highlights:
+    - Engineered a native C++23 nonlinear numerical solver exposed to Python via nanobind to calculate non‐Newtonian state equations, system impedance models, and cumulative energy requirements
+    - Implemented a constrained bisection root‐finder and numerical Euler integrator utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation at 0.0001 s time steps
+    - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile knowledge base pages into HTML and PDF
 
--   name: Jet‐Jacked
-    type: 3D Animated Sequence
-    is_media: true
-    roles: Technical Lead, Animator
-    start_date: 2022-04-10
-    end_date: 2022-05-25
-    highlights:
-        - Rigged 2 vehicles and a character’s hair within a week
-        - Animated a character, 2 vehicles, and a camera across 6 weeks
-        - Wrote Python scripts for resetting rig controllers to their default positions
-        - Optimized 3D assets for responsive scene navigation and animation playback
+- name: Jet‑Jacked
+  type: 3D Animated Sequence
+  is_media: true
+  roles: Technical Lead, Animator
+  start_date: 2022-04-10
+  end_date: 2022-05-25
+  highlights:
+    - Rigged 2 vehicles and a character’s hair within a week
+    - Animated a character, 2 vehicles, and a camera across 6 weeks
+    - Wrote Python scripts for resetting rig controllers to their default positions
+    - Optimized 3D assets for responsive scene navigation and animation playback
 
--   name: Kiki’s Bakery
-    type: 3D Environment
-    is_media: true
-    url: vimeo.com/795348460?share=highlights
-    roles: Technical Lead, Rigger, Animator, Modeler
-    start_date: 2022-11-03
-    end_date: 2022-12-15
-    highlights:
-        - Rigged and animated a prop, scene lights, and a camera within a week
-        - Sculpted, textured, rigged, and animated a stylized cat across 5 weeks
-        - Reduced rendering time nearly by 50% by providing methods to optimize scene
-        - Troubleshot technical issues related to 3D modeling and rendering
+- name: Kiki’s Bakery
+  type: 3D Environment
+  is_media: true
+  url: vimeo.com/795348460?share=highlights
+  roles: Technical Lead, Rigger, Animator, Modeler
+  start_date: 2022-11-03
+  end_date: 2022-12-15
+  highlights:
+    - Rigged and animated a prop, scene lights, and a camera within a week
+    - Sculpted, textured, rigged, and animated a stylized cat across 5 weeks
+    - Reduced rendering time nearly by 50% by providing methods to optimize scene
+    - Troubleshot technical issues related to 3D modeling and rendering
 
--   name: A Trace
-    type: 3D Animated Short Film
-    is_media: true
-    url: linktr.ee/atraceshortfilm
-    roles: Technical & Rigging Lead, Co‐Producer, Animator
-    start_date: 2022-06-16
-    end_date: 2023-05-25
-    highlights:
-        - Served as the primary tech support for the core team of 10 artists for an award‐winning
-            BFA capstone project, enhancing the team’s workflow through Python scripts to
-            automate tedious and repetitive tasks
-        - Led R&D for rigging a flat, paper character and 4 props in Autodesk Maya across
-            9 months
-        - Optimized Arnold Renderer settings, co‐wrote a guide, and coached the team to
-            set up renders
-        - Co‐created a timeline spreadsheet for rendering and compositing all 54 shots of
-            the film
-        - Animated a character shot within a 3‑week turnaround
+- name: A Trace
+  type: 3D Animated Short Film
+  is_media: true
+  url: linktr.ee/atraceshortfilm
+  roles: Technical & Rigging Lead, Co‑Producer, Animator
+  start_date: 2022-06-16
+  end_date: 2023-05-25
+  highlights:
+    - Served as the primary tech support for the core team of 10 artists for an award‐winning BFA capstone project, enhancing the team’s workflow through Python scripts to automate tedious and repetitive tasks
+    - Led R&D for rigging a flat, paper character and 4 props in Autodesk Maya across 9 months
+    - Optimized Arnold Renderer settings, co‑wrote a guide, and coached the team to set up renders
+    - Co‐created a timeline spreadsheet for rendering and compositing all 54 shots of the film
+    - Animated a character shot within a 3‑week turnaround
 
--   name: My Turn!
-    type: 2D Animated Short Film
-    is_media: true
-    url: www.kickstarter.com/projects/myturnshortfilm/my-turn
-    roles: Technical Assistance
-    start_date: 2024-01-06
-    end_date: 2024-05-20
-    highlights:
-        - Developed a Python and Qt Script‐based CLI tool for batch rendering of Harmony
-            scenes directly into structured Google Drive directories
+- name: My Turn!
+  type: 2D Animated Short Film
+  is_media: true
+  url: www.kickstarter.com/projects/myturnshortfilm/my-turn
+  roles: Technical Assistance
+  start_date: 2024-01-06
+  end_date: 2024-05-20
+  highlights:
+    - Developed a Python and Qt Script‐based CLI tool for batch rendering of Harmony scenes directly into structured Google Drive directories
 
--   name: re:connection
-    type: 3D Animated Short Film
-    is_media: true
-    url: re-connection.carrd.co
-    roles: Pipeline Technical Director
-    start_date: 2024-01-19
-    end_date: 2024-05-20
-    highlights:
-        - Deployed a custom Autodesk Maya shelf to streamline asset handoffs across production
-            departments
-        - Developed Python tools for exporting and importing Alembic caches automatically
-            synced via Google Drive, and an automated object mask generator for After Effects,
-            accelerating the lighting, rendering, and compositing pipelines by 80%
-        - Served as the technical consultant and support to the director and department
-            leads
+- name: re:connection
+  type: 3D Animated Short Film
+  is_media: true
+  url: re-connection.carrd.co
+  roles: Pipeline Technical Director
+  start_date: 2024-01-19
+  end_date: 2024-05-20
+  highlights:
+    - Deployed a custom Autodesk Maya shelf to streamline asset handoffs across production departments
+    - Developed Python tools for exporting and importing Alembic caches automatically synced via Google Drive, and an automated object mask generator for After Effects, accelerating the lighting, rendering, and compositing pipelines by 80%
+    - Served as the technical consultant and support to the director and department leads
 
--   name: Flux Fantasia
-    type: 3D Animated Short Film
-    is_media: true
-    roles: Rigging + Technical Engineer
-    start_date: 2024-06-01
-    end_date: 2025-01-01
-    highlights:
-        - Spearheaded R&D for motion capture ingestion and retargeting pipeline within Blender
-        - Rigged 2 bipedal characters and 3 props, implementing motion capture cleanup and
-            retargeting capability
-        - Diagnosed and optimized dynamic cloth simulation and collision physics to prevent
-            mesh intersection during rapid character movement
+- name: Flux Fantasia
+  type: 3D Animated Short Film
+  is_media: true
+  roles: Rigging + Technical Engineer
+  start_date: 2024-06-01
+  end_date: 2025-01-01
+  highlights:
+    - Spearheaded R&D for motion capture ingestion and retargeting pipeline within Blender
+    - Rigged 2 bipedal characters and 3 props, implementing motion capture cleanup and retargeting capability
+    - Diagnosed and optimized dynamic cloth simulation and collision physics to prevent mesh intersection during rapid character movement
 
--   name: Spirit Driver
-    type: Visual Novel
-    is_media: true
-    url: https://noodledonut.itch.io/spirit-driver
-    roles: Programmer
-    start_date: 2024-09-01
-    end_date: 2024-09-30
-    highlights:
-        - Programmed dialogue and menu scripts in Ren'Py for a visual novel that won 1st place
-            at the Spooktober 6th Annual Visual Novel Jam
+- name: Spirit Driver
+  type: Visual Novel
+  is_media: true
+  url: https://noodledonut.itch.io/spirit-driver
+  roles: Programmer
+  start_date: 2024-09-01
+  end_date: 2024-09-30
+  highlights:
+    - Programmed dialogue and menu scripts in Ren'Py for a visual novel that won 1st place at the Spooktober 6th Annual Visual Novel Jam
 
--   name: CharlesMC11.github.io / resumake
-    type: Personal Website / Static Site Generator
-    url: https://github.com/CharlesMC11/CharlesMC11.github.io.git
-    roles: Developer, Maintainer
-    start_date: 2024-09-24
-    highlights:
-        - Engineered a lightweight static site generator utilizing Python, Jinja, and Make
+- name: CharlesMC11.github.io / resumake
+  type: Personal Website / Static Site Generator
+  url: https://github.com/CharlesMC11/CharlesMC11.github.io.git
+  roles: Developer, Maintainer
+  start_date: 2024-09-24
+  highlights:
+    - Engineered a lightweight static site generator utilizing Python, Jinja, and Make
 
--   name: sst (Screenshot Tagger)
-    type: Automation Utility
-    url: https://github.com/CharlesMC11/sst.git
-    roles: Developer, Maintainer
-    start_date: 2025-05-05
-    highlights:
-        - Engineered an event‐driven Zsh background daemon utilizing macOS launchd and ExifTool
-            to automatically inject hardware and capture metadata into screenshots in real
-            time
-        - Developed a custom Makefile build pipeline to statically bake system and script
-            configurations into and compile the shell artifacts into Zsh word code, deployed
-            to a transient RAM disk
+- name: sst (Screenshot Tagger)
+  type: Automation Utility
+  url: https://github.com/CharlesMC11/sst.git
+  roles: Developer, Maintainer
+  start_date: 2025-05-05
+  highlights:
+    - Engineered an event‐driven Zsh background daemon utilizing macOS launchd and ExifTool to automatically inject hardware and capture metadata into screenshots in real time
+    - Developed a custom Makefile build pipeline to statically bake system and script configurations into and compile the shell artifacts into Zsh word code, deployed to a transient RAM disk
 
--   name: File Organizer
-    type: Automation Script
-    url: https://github.com/CharlesMC11/file-organizer.git
-    roles: Developer
-    start_date: 2025-07-13
-    end_date: 2026-01-07
+- name: File Organizer
+  type: Automation Script
+  url: https://github.com/CharlesMC11/file-organizer.git
+  roles: Developer
+  start_date: 2025-07-13
+  end_date: 2026-01-07
 
--   type: GBA-Inspired Sprite Engine
-    url: https://github.com/CharlesMC11/test-sprite-engine.git
-    roles: Developer
-    start_date: 2026-02-01
-    highlights:
-        - Engineered a zero‐highlights C++23 2D sprite engine on Apple Silicon, utilizing Arm
-            Neon Intrinsics, Metal Compute, and continuous 3D swept‐AABB physics
-        - Designed an SoA‐based dynamic entity registry utilizing double‐buffered transform
-            channels and dynamic MTL::Buffer memory pools allocated on cache‐aligned Unified
-            Memory
-        - Developed an offline OpenCV‐Python asset toolchain to extract sprite color palettes,
-            bit pack custom pixel formats, align binaries for 16‑byte SIMD loads, and generate
-            a deduplicated master atlas loaded via a RAII‐wrapped mmap manager and C++ asset
-            enum headers for easy atlas lookup
+- type: GBA-Inspired Sprite Engine
+  url: https://github.com/CharlesMC11/test-sprite-engine.git
+  roles: Developer
+  start_date: 2026-02-01
+  highlights:
+    - Engineered a zero‐highlights C++23 2D sprite engine on Apple Silicon, utilizing Arm Neon Intrinsics, Metal Compute, and continuous 3D swept‐AABB physics
+    - Designed an SoA‐based dynamic entity registry utilizing double‐buffered transform channels and dynamic MTL::Buffer memory pools allocated on cache‐aligned Unified Memory
+    - Developed an offline OpenCV‐Python asset toolchain to extract sprite color palettes, bit pack custom pixel formats, align binaries for 16‑byte SIMD loads, and generate a deduplicated master atlas loaded via a RAII‐wrapped mmap manager and C++ asset enum headers for easy atlas lookup
 
--   name: Ensnared Bloom
-    type: Visual Novel
-    is_media: true
-    url: https://noodledonut.itch.io/ensnared-bloom
-    roles: Storyboard Assistance
-    start_date: 2026-09-14
-    end_date: 2026-09-21
+- name: Ensnared Bloom
+  type: Visual Novel
+  is_media: true
+  url: https://noodledonut.itch.io/ensnared-bloom
+  roles: Storyboard Assistance
+  start_date: 2026-09-14
+  end_date: 2026-09-21

@@ -1,0 +1,33 @@
+{% from "cv/_macros.html.jinja" import format_honors %}
+
+<section id="education">
+  <h2 class="h1">Education</h2>
+
+  <ul class="cv__list-container">
+    {% for institution in education %}
+      <li class="cv__list-item">
+        <h3 class="h2 cv__subheading">{{ institution.institution | trim }}</h3>
+
+        <ul>
+          {% for concentration in institution.concentrations %}
+
+            <li class="cv__list-item">
+              <dl class="cv__sub-subheading">
+                <dt><h4 class="cv__degree-container">
+                  <span class="cv__degree">{{- concentration.degree | trim -}}</span> in <span
+                  class="cv__concentration">{{- concentration.name | trim -}}</span></h4></dt>
+
+                <dd class="cv__date-container"><h5>{{ concentration.award_date | date_fmt }}</h5></dd>
+              </dl>
+
+              {% if concentration.honors %}
+                <p class="cv__edu-honors">{{- format_honors(concentration.honors) -}}</p>
+              {% endif %}
+            </li>
+
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

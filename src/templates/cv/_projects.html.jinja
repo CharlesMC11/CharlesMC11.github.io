@@ -1,0 +1,29 @@
+{% from "cv/_macros.html.jinja" import project_link, timed_entry %}
+
+<section id="projects">
+  <h2 class="h1">Projects</h2>
+
+  <ul>
+    {% for project in projects %}
+
+      <li class="cv__list-item">
+        <h3 class="h2 cv__subheading">
+          {%- if project.is_media -%}
+            <cite class="h2">{{- project_link(project.type, project.name, project.url) -}}</cite>
+          {%- else -%}
+            {{- project_link(project.type, project.name, project.url) -}}
+          {%- endif -%}
+
+          {%- if project.name -%}
+            &nbsp;{{- project.type | trim -}}
+          {%- endif -%}
+        </h3>
+
+        <ul>
+          {{ timed_entry(project.roles, project.start_date, project.end_date, project.highlights) }}
+        </ul>
+
+      </li>
+    {% endfor %}
+  </ul>
+</section>

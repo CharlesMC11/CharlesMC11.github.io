@@ -1,0 +1,16 @@
+space: hsl
+
+primary_color:
+  - 210
+  - 1.0
+  - 0.25
+
+secondary_color:
+  - 0
+  - 1.0
+  - 1.0
+
+tertiary_color:
+  - 30
+  - 1.0
+  - 0.75
