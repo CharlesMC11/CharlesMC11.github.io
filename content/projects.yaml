@@ -17,7 +17,7 @@
     - Implemented a constrained bisection root‐finder and numerical Euler integrator utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation at 0.0001 s time steps
     - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile knowledge base pages into HTML and PDF
 
-- name: Jet‐Jacked
+- name: Jet‑Jacked
   type: 3D Animated Sequence
   is_media: true
   roles: Technical Lead, Animator
@@ -46,13 +46,13 @@
   type: 3D Animated Short Film
   is_media: true
   url: linktr.ee/atraceshortfilm
-  roles: Technical & Rigging Lead, Co‐Producer, Animator
+  roles: Technical & Rigging Lead, Co‑Producer, Animator
   start_date: 2022-06-16
   end_date: 2023-05-25
   highlights:
     - Served as the primary tech support for the core team of 10 artists for an award‐winning BFA capstone project, enhancing the team’s workflow through Python scripts to automate tedious and repetitive tasks
     - Led R&D for rigging a flat, paper character and 4 props in Autodesk Maya across 9 months
-    - Optimized Arnold Renderer settings, co‐wrote a guide, and coached the team to set up renders
+    - Optimized Arnold Renderer settings, co‑wrote a guide, and coached the team to set up renders
     - Co‐created a timeline spreadsheet for rendering and compositing all 54 shots of the film
     - Animated a character shot within a 3‑week turnaround
 
