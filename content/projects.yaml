@@ -9,15 +9,15 @@
     - Animated a character and a prop across 4 weeks
     - Wrote MEL scripts for resetting rig controllers to their default positions
 
-- type: World-Building Wiki & Simulation Solver
+- type: Worldbuilding Wiki & Simulation Solver
   roles: Developer, Maintainer
   start_date: 2022-02-01
   highlights:
-    - Engineered a native C++23 nonlinear numerical solver exposed to Python via nanobind to calculate non‐Newtonian state equations, system impedance models, and cumulative energy requirements
+    - Engineered a native C++23 nonlinear numerical solver exposed to Python via nanobind to calculate non‑Newtonian state equations, system impedance models, and cumulative energy requirements
     - Implemented a constrained bisection root‐finder and numerical Euler integrator utilizing hardware FMA intrinsics to track dynamic system decay and strain accumulation at 0.0001 s time steps
     - Developed a Python pipeline utilizing Markdown, Jinja, and Pandoc to compile knowledge base pages into HTML and PDF
 
-- name: Jet‑Jacked
+- name: Jet‐Jacked
   type: 3D Animated Sequence
   is_media: true
   roles: Technical Lead, Animator
@@ -123,12 +123,12 @@
   start_date: 2025-07-13
   end_date: 2026-01-07
 
-- type: GBA-Inspired Sprite Engine
+- type: GBA‐Inspired Sprite Engine
   url: https://github.com/CharlesMC11/test-sprite-engine.git
   roles: Developer
   start_date: 2026-02-01
   highlights:
-    - Engineered a zero‐highlights C++23 2D sprite engine on Apple Silicon, utilizing Arm Neon Intrinsics, Metal Compute, and continuous 3D swept‐AABB physics
+    - Engineered a zero‐copy C++23 2D sprite engine on Apple Silicon, utilizing Arm Neon Intrinsics, Metal Compute, and continuous 3D swept‐AABB physics
     - Designed an SoA‐based dynamic entity registry utilizing double‐buffered transform channels and dynamic MTL::Buffer memory pools allocated on cache‐aligned Unified Memory
     - Developed an offline OpenCV‐Python asset toolchain to extract sprite color palettes, bit pack custom pixel formats, align binaries for 16‑byte SIMD loads, and generate a deduplicated master atlas loaded via a RAII‐wrapped mmap manager and C++ asset enum headers for easy atlas lookup
 

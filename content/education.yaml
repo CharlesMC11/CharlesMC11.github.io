@@ -10,11 +10,11 @@
       honors: magna cum laude
       award_date: 2018-08-24
 
-- institution: San José State University
+- institution: San José State University
   start_date: 2018-08-01
   concentrations:
     - degree: Bachelor of Fine Arts
-      name: Art, Animation/Illustration Concentration
+      name: Art, Animation/​Illustration Concentration
       honors: magna cum laude
       award_date: 2023-05-26
 
@@ -26,14 +26,14 @@
       honors: magna cum laude
       award_date: 2026-06-26
     - degree: Certificate of Achievement
-      name: Unix/Linux Operating System
+      name: Unix/Linux Operating System
       honors: with Honors
       award_date: 2026-06-26
     - degree: Certificate of Achievement
-      name: Programming in C/C++
+      name: Programming in C/C++
       honors: with Honors
       award_date: 2025-08-22
     - degree: Certificate of Achievement
-      name: Programming in Python
+      name: Programming in Python
       honors: with Honors
       award_date: 2025-08-22
