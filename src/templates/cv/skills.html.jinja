@@ -7,12 +7,12 @@
         <h3 class="h2">{{- category | trim -}}</h3>
 
         <ul>
-          {%- for skill in skills -%}
+          {% for skill in skills %}
             <li class="cv__list-item">{{- skill | trim -}}</li>
-          {%- endfor -%}
+          {% endfor %}
         </ul>
 
       </li>
-    {%- endfor -%}
+    {% endfor %}
   </ul>
 </section>

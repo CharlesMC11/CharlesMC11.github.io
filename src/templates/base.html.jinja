@@ -14,7 +14,7 @@
           crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="style.css"/>
-  {%- block head -%}{%- endblock head -%}
+  {% block head %}{% endblock head %}
 </head>
 
 <body>
@@ -40,7 +40,7 @@
   <hr/>
 </header>
 
-<main>{%- block content -%}{%- endblock content -%}</main>
+<main>{% block content %}{% endblock content %}</main>
 
 <footer>
   <hr/>
@@ -48,7 +48,7 @@
     <ul class="navbar">
       <li class="navbar__item">
         <a class="navbar__link" href="mailto:{{- socials.email | trim -}}"
-           title="Send an email to {{- socials.full_name | trim -}}">
+           title="Send an email to {{ socials.full_name | trim -}}">
           <i class="fa-solid fa-envelope"></i>
         </a>
       </li>
