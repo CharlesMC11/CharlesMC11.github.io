@@ -17,12 +17,19 @@ CONTENT_DIR = SRC_DIR.parent / "content"
 BUILD_DIR = SRC_DIR.parent / "build"
 BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
+
+def _date_formatter(val: date) -> str:
+    """Date format filter for Jinja."""
+
+    return val.strftime("%b %Y")
+
+
 JINJA_ENV = Environment(
     trim_blocks=True,
     lstrip_blocks=True,
     loader=FileSystemLoader((TEMPLATE_DIR, STATIC_DIR)),
 )
-
+JINJA_ENV.filters["date_fmt"] = _date_formatter
 
 CURRENT_YEAR = date.today().year
 
@@ -176,16 +183,8 @@ def _load_yaml(filename: str) -> list[dict[str, Any]] | dict[str, Any]:
         return yaml.safe_load(f)
 
 
-def _date_formatter(val: date) -> str:
-    """Date format filter for Jinja."""
-
-    return val.strftime("%b %Y")
-
-
 def _minify(content: str) -> str:
     return minify_html.minify(content, minify_css=True, minify_js=True)
 
-
-JINJA_ENV.filters["date_fmt"] = _date_formatter
 
 SOCIALS = _load_yaml("socials.yaml")
