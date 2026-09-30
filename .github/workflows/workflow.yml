@@ -2,10 +2,10 @@ name: QA
 on: [ push ]
 
 jobs:
-    check:
-        runs-on: ubuntu-latest
-        steps:
-            -   uses: actions/checkout@v6.0.1
-            -   uses: ./.github/actions/setup
-            -   name: Lint & Format Checks
-                run: make check
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6.0.1
+      - uses: ./.github/actions/setup
+      - name: Lint & Format Checks
+        run: make check

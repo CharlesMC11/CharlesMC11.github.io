@@ -10,7 +10,7 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 
-[*.{css,html,jinja,js,md,json,toml,yaml,yml}]
+[*.{css,html,jinja,js,json,toml,yaml,yml}]
 indent_size = 2
 
 
