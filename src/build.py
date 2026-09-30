@@ -188,13 +188,11 @@ def _record_date_key(record: dict[str, date | Any]) -> tuple[date, date]:
         raise KeyError(f"Missing 'start_date' in record: '{display}'")
 
 
-def _load_and_sort_yaml(
-    filename: str, key=_record_date_key
-) -> list[dict[str, date | Any]]:
+def _load_and_sort_yaml(filename: str) -> list[dict[str, date | Any]]:
     """Parse a YAML file into a sorted list of dictionaries."""
 
     content = _load_yaml(filename)
-    content.sort(key=key, reverse=True)
+    content.sort(key=_record_date_key, reverse=True)
 
     return content
 
