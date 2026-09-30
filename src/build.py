@@ -1,10 +1,13 @@
 import sys
+from collections.abc import Sequence
 from datetime import date
 from pathlib import Path
 from typing import Any
 
 import minify_html
+import rcssmin
 import yaml
+from coloraide import Color
 from jinja2 import Environment, FileSystemLoader
 
 SRC_DIR = Path(__file__).parent
@@ -15,7 +18,9 @@ BUILD_DIR = SRC_DIR.parent / "build"
 BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
 JINJA_ENV = Environment(
-    trim_blocks=True, lstrip_blocks=True, loader=FileSystemLoader(TEMPLATE_DIR)
+    trim_blocks=True,
+    lstrip_blocks=True,
+    loader=FileSystemLoader((TEMPLATE_DIR, STATIC_DIR)),
 )
 
 
@@ -53,9 +58,22 @@ def build_cv() -> None:
     (BUILD_DIR / "cv.html").write_text(_minify(content))
 
 
-# FIXME
 def build_css() -> None:
-    raise NotImplemented
+
+    raw_colors = _load_yaml("colors.yaml")
+
+    processed_colors = _build_colors(
+        raw_colors["space"],
+        raw_colors["primary_color"],
+        raw_colors["secondary_color"],
+        raw_colors["tertiary_color"],
+    )
+    css_strings = {k: v.to_string() for k, v in processed_colors.items()}
+
+    content = JINJA_ENV.get_template("style.css.jinja").render(**css_strings)
+    (BUILD_DIR / "style.css").write_text(
+        rcssmin.cssmin(content, keep_bang_comments=False), encoding="utf-8"
+    )
 
 
 # Protected helpers
@@ -88,6 +106,47 @@ def _load_and_sort_education() -> list[dict[str, Any]]:
     )
 
     return content
+
+
+def _build_colors(
+    color_space: str,
+    primary_coords: Sequence[int | float],
+    secondary_coords: Sequence[int | float],
+    tertiary_coords: Sequence[int | float],
+) -> dict[str, Color]:
+
+    primary = Color(color_space, primary_coords)
+
+    primary_dark = primary.clone()
+    primary_dark["l"] /= 1.25
+
+    primary_light = primary.clone()
+    primary_light["l"] *= 3
+
+    primary_transparent = primary.clone()
+    primary_transparent["alpha"] = 0.75
+
+    secondary = Color(color_space, secondary_coords)
+
+    secondary_dark = secondary.clone()
+    secondary_dark["l"] = 0.95
+
+    tertiary = Color(color_space, tertiary_coords)
+
+    tertiary_light = tertiary.clone()
+    tertiary_light["s"] /= 3
+    tertiary_light["l"] = 0.95
+
+    return {
+        "primary_color": primary,
+        "primary_dark": primary_dark,
+        "primary_light": primary_light,
+        "primary_transparent": primary_transparent,
+        "secondary_color": secondary,
+        "secondary_dark": secondary_dark,
+        "tertiary_color": tertiary,
+        "tertiary_light": tertiary_light,
+    }
 
 
 def _record_date_key(record: dict[str, date | Any]) -> tuple[date, date]:
