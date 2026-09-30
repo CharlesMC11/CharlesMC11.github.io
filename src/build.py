@@ -8,7 +8,7 @@ import minify_html
 import rcssmin
 import yaml
 from coloraide import Color
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, UndefinedError
 
 SRC_DIR = Path(__file__).resolve().parent
 TEMPLATE_DIR = SRC_DIR / "templates"
@@ -22,7 +22,10 @@ BUILD_DIR.mkdir(parents=True, exist_ok=True)
 def _date_formatter(val: date) -> str:
     """Date format filter for Jinja."""
 
-    return val.strftime("%b %Y")
+    try:
+        return val.strftime("%b %Y")
+    except UndefinedError:
+        return "Present"
 
 
 JINJA_ENV = Environment(
@@ -111,12 +114,12 @@ def _load_and_sort_education() -> list[dict[str, Any]]:
             raise KeyError(f"Missing 'start_date' in record: '{display}'")
 
         institution["concentrations"].sort(
-            key=lambda x: (x.get("award_date", date.max), start_date),
+            key=lambda x: (x.get("award_date") or date.max, start_date),
             reverse=True,
         )
 
     content.sort(
-        key=lambda x: x["concentrations"][0].get("award_date", date.max),
+        key=lambda x: x["concentrations"][0].get("award_date") or date.max,
         reverse=True,
     )
 
@@ -175,7 +178,7 @@ def _record_date_key(record: dict[str, date | Any]) -> tuple[date, date]:
     """
 
     try:
-        return record.get("end_date", date.max), record["start_date"]
+        return record.get("end_date") or date.max, record["start_date"]
     except KeyError:
         display = (
             record.get("company")
