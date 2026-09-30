@@ -21,9 +21,10 @@
 
         <li class="cv__list-item">
           <dl class="cv__sub-subheading">
-            <dt><h4>
-              {{- concentration.degree | trim }} in
-              {{ concentration.name | trim -}}
+            <dt><h4 class="cv__degree-container">
+              <span class="cv__degree">{{- concentration.degree | trim -}}
+              </span> in <span
+              class="cv__concentration">{{- concentration.name | trim -}}</span>
             </h4></dt>
 
             <dd class="cv__date-container">
