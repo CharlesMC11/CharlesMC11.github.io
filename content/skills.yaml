@@ -2,15 +2,15 @@ Programming Languages:
   - C++
   - Objective‑C++
   - C
-  - Assembly (AArch64, x86_64)
+  - Assembly (AArch64, x86_64)
   - Python
-  - JavaScript (ECMAScript)
-  - MEL (Maya Embedded Language)
+  - JavaScript (ECMAScript)
+  - MEL (Maya Embedded Language)
 
 Systems & HPC:
-  - SIMD (Arm Neon Intrinsics)
-  - Memory Management (RAII, SoA, mmap, Custom Allocators)
-  - Concurrency (File‐based Locks)
+  - SIMD (Arm Neon Intrinsics)
+  - Memory Management (RAII, SoA, mmap, Custom Allocators)
+  - Concurrency (File‐based Locks)
   - Custom Binary Formats
 
 Computer Graphics & Vision:
@@ -39,9 +39,9 @@ Libraries & Utilities:
 
 Platforms & Environments:
   - macOS
-  - Unix/Linux (Debian, CentOS)
+  - Unix/Linux (Debian, CentOS)
   - Windows
-  - Virtualization (UTM)
+  - Virtualization (UTM)
 
 DCC & Creative Tools:
   - Autodesk Maya
