@@ -169,6 +169,8 @@ footer .navbar__link:hover {
   background-color: var(--primary-color-transparent);
   color: var(--secondary-color);
 
+  -webkit-tap-highlight-color: transparent;
+
   width: 3rem;
   height: 3rem;
   aspect-ratio: 1 / 1;
@@ -192,8 +194,19 @@ footer .navbar__link:hover {
   pointer-events: auto;
 }
 
-.scroll-to-top:hover {
+@media (hover: hover) {
+  .scroll-to-top:hover {
+    background-color: var(--primary-color-dark);
+  }
+}
+
+.scroll-to-top:active {
   background-color: var(--primary-color-dark);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--primary-color-light);
+  outline-offset: 2px;
 }
 
 {# Main ######################################################################}
