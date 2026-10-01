@@ -34,7 +34,6 @@
 }
 
 * {
-  font-size: var(--primary-font-size);
   margin: 0;
   padding: 0;
 }
@@ -50,8 +49,9 @@ hr {
 body {
   background-color: var(--secondary-color);
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   font-family: -apple-system, Helvetica, Arial, sans-serif, "Apple Color Emoji";
+  font-size: var(--primary-font-size);
   line-height: var(--primary-line-height);
   min-height: 100vh;
   place-items: center center;
@@ -164,10 +164,6 @@ main {
   width: 100%;
 }
 
-body * {
-{#outline: 1px dotted gray;#}
-}
-
 .copy-text {
   max-width: 75ch;
 }
@@ -194,23 +190,24 @@ body * {
 }
 
 .cv__sub-subheading {
-  align-items: baseline;
+  align-items: center;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 0.5rem;
 }
 
 .cv__project-link {
   color: var(--primary-color-light);
 }
 
-.cv__date-container * {
-  flex-direction: row-reverse;
-  justify-content: right;
+.cv__entry_name {
+  flex: 2 1 0;
 }
 
-{# .cv__list-container { #}
-{#  padding: 2rem 0; #}
-{# } #}
+.cv__date-container {
+  flex: 1 1 0;
+  text-align: right;
+}
 
 .cv__list-item {
   list-style: none;
@@ -222,6 +219,7 @@ body * {
   display: flex;
   flex-flow: row wrap;
   gap: 1rem;
+  padding-bottom: 0.5rem;
   place-content: space-around space-around;
 }
 
@@ -230,9 +228,14 @@ body * {
 }
 
 .cv__degree-container {
+  column-gap: 0.5ch;
   display: flex;
   flex-flow: row wrap;
-  gap: 0.5ch;
+  justify-content: flex-start;
+}
+
+.cv__degree-honors {
+  padding: 0 0 0.5rem 2rem;
 }
 
 {# About Me ##################################################################}
@@ -265,12 +268,16 @@ body * {
     padding: 0 0 0 1rem;
   }
 
+  .cv__degree-honors {
+    padding: 0 0 0.5rem 1rem;
+  }
+
   .about-me__img {
     max-width: 256px;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 560px) {
   .h1 {
     font-size: calc(var(--primary-font-size) * 1.5);
   }
@@ -279,14 +286,18 @@ body * {
     font-size: calc(var(--primary-font-size) * 1.25);
   }
 
-  .cv__date-container::before {
-    content: "\A";
-    white-space: pre-wrap;
-  }
-
   .cv__list-item {
     padding: 0;
     width: 100%;
+  }
+
+  .cv__degree_separator {
+    flex-basis: 100%;
+    font-size: 0;
+  }
+
+  .cv__degree-honors {
+    padding: 0 0 0.5rem 0;
   }
 }
 
