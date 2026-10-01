@@ -31,12 +31,7 @@
   <hr/>
 </header>
 
-<main>
-  <a href="#brand" class="scroll-to-top" aria-label="Scroll to Top">
-    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
-  </a>
-  {% block content %}{% endblock content %}
-</main>
+<main>{% block content %}{% endblock content %}</main>
 
 <footer>
   <hr/>
@@ -77,5 +72,22 @@
     <p>Generated with Python, Jinja, and Make. Hosted on GitHub Pages.</p>
   </section>
 </footer>
+
+<a href="#brand" class="scroll-to-top" aria-label="Scroll to Top">
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+</a>
+
+<script>
+  const scrollBtn = document.querySelector('.scroll-to-top')
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  }, {passive: true});
+</script>
 </body>
 </html>
+
