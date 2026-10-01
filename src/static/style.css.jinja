@@ -39,6 +39,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   scrollbar-gutter: stable;
 }
 
@@ -48,14 +49,16 @@ hr {
 
 body {
   background-color: var(--secondary-color);
+  min-height: 100vh;
+
   display: flex;
   flex-flow: column nowrap;
+  place-items: center center;
+  place-content: space-around space-around;
+
   font-family: -apple-system, Helvetica, Arial, sans-serif, "Apple Color Emoji";
   font-size: var(--primary-font-size);
   line-height: var(--primary-line-height);
-  min-height: 100vh;
-  place-items: center center;
-  place-content: space-around space-around;
 }
 
 p {
@@ -73,15 +76,16 @@ p {
 {# Header/Footer #############################################################}
 
 header, footer {
+  width: 100%;
   background-color: var(--primary-color);
+
   display: flex;
   flex-flow: column nowrap;
-  width: 100%;
 }
 
 footer {
-  color: var(--secondary-color);
   padding: 1rem 0 3rem;
+  color: var(--secondary-color);
 }
 
 .footer__copyright {
@@ -112,8 +116,8 @@ footer {
 }
 
 .brand__name, .brand__title {
-  color: var(--primary-color-dark);
   text-align: center;
+  color: var(--primary-color-dark);
 }
 
 {# Navbar ####################################################################}
@@ -155,13 +159,35 @@ footer .navbar__link:hover {
   color: var(--primary-color-light);
 }
 
+{# Scroll-to-Top #############################################################}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+
+  background-color: var(--primary-color-transparent);
+  color: var(--secondary-color);
+  border-radius: 75%;
+  padding: 0.75rem;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 100;
+}
+
+
 {# Main ######################################################################}
 
 main {
-  background-color: var(--secondary-color);
-  flex: 1;
-  padding: 2rem;
   width: 100%;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+
+  flex: 1;
 }
 
 .copy-text {
@@ -176,9 +202,9 @@ main {
 {# Curriculum Vitae ##########################################################}
 
 .cv__container {
-  align-content: center;
   display: flex;
   flex-flow: column wrap;
+  align-content: center;
 }
 
 .cv__content {
@@ -194,10 +220,11 @@ main {
 }
 
 .cv__sub-subheading {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
   padding-bottom: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cv__project-link {
@@ -214,17 +241,19 @@ main {
 }
 
 .cv__list-item {
-  list-style: none;
   min-width: 20ch;
   padding: 0 0 0 2rem;
+
+  list-style: none;
 }
 
 .cv__skills-container {
+  padding-bottom: 0.5rem;
+
   display: flex;
   flex-flow: row wrap;
-  gap: 1rem;
-  padding-bottom: 0.5rem;
   place-content: space-around space-around;
+  gap: 1rem;
 }
 
 .cv__skills-container .h2 {
@@ -232,10 +261,10 @@ main {
 }
 
 .cv__degree-container {
-  column-gap: 0.5ch;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  column-gap: 0.5ch;
 }
 
 .cv__degree-honors {
@@ -245,11 +274,11 @@ main {
 {# About Me ##################################################################}
 
 .about-me__container {
-  align-items: center;
   display: flex;
   flex-flow: row wrap;
-  gap: 1rem;
+  align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 .about-me__img {
@@ -291,13 +320,13 @@ main {
   }
 
   .cv__list-item {
-    padding: 0;
     width: 100%;
+    padding: 0;
   }
 
   .cv__degree_separator {
-    flex-basis: 100%;
     font-size: 0;
+    flex-basis: 100%;
   }
 
   .cv__degree-honors {

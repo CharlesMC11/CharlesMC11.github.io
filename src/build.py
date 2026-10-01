@@ -142,7 +142,7 @@ def _build_colors(
     primary_light["l"] *= 3
 
     primary_transparent = primary.clone()
-    primary_transparent["alpha"] = 0.75
+    primary_transparent["alpha"] = 0.5
 
     secondary = Color(color_space, secondary_coords)
 
