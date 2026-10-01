@@ -19,12 +19,12 @@ BUILD_DIR = SRC_DIR.parent / "build"
 BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
 
-def _date_formatter(val: date) -> str:
+def _date_formatter(val: date | None | UndefinedError) -> str:
     """Date format filter for Jinja."""
 
     try:
         return val.strftime("%b %Y")
-    except UndefinedError:
+    except AttributeError, UndefinedError:
         return "Present"
 
 
