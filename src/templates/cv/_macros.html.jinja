@@ -9,10 +9,17 @@
 
 {% macro timed_entry(name, start_date, end_date=None, highlights=None) %}
   <li class="cv__list-item">
-    <dl class="cv__sub-subheading">
-      <dt><h4>{{ name | trim }}</h4></dt>
-      <dd class="cv__date-container"><h5>{{- start_date | date_fmt -}}–{{- end_date | date_fmt -}}</h5></dd>
-    </dl>
+    <div class="cv__sub-subheading">
+      <h4 class="cv__entry_name">{{ name | trim }}</h4>
+
+      {% set formatted_start_date = start_date | date_fmt %}
+      {% set formatted_end_date = end_date | date_fmt %}
+
+      <time class="cv__date-container">{{- formatted_start_date -}}
+        {%- if formatted_start_date != formatted_end_date -%}
+          –{{- formatted_end_date -}}
+        {%- endif -%}</time>
+    </div>
 
     {% if highlights %}
       <ul>
