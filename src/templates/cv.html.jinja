@@ -2,20 +2,22 @@
 
 {% block content %}
   <article class="cv__container" id="cv">
-    {% if experience %}
-      {% include "cv/_experience.html.jinja" %}
-    {% endif %}
+    <div class="cv__content">
+      {% if experience %}
+        {% include "cv/_experience.html.jinja" %}
+      {% endif %}
 
-    {% if projects %}
-      {% include "cv/_projects.html.jinja" %}
-    {% endif %}
+      {% if projects %}
+        {% include "cv/_projects.html.jinja" %}
+      {% endif %}
 
-    {% if skills %}
-      {% include "cv/_skills.html.jinja" %}
-    {% endif %}
+      {% if skills %}
+        {% include "cv/_skills.html.jinja" %}
+      {% endif %}
 
-    {% if education %}
-      {% include "cv/_education.html.jinja" %}
-    {% endif %}
+      {% if education %}
+        {% include "cv/_education.html.jinja" %}
+      {% endif %}
+    </div>
   </article>
 {% endblock content %}
