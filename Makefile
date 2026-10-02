@@ -29,3 +29,4 @@ $(BUILD_DIR)/app.js: ./src/static/app.js
 check:
 	@uvx ruff check .
 	@uvx ruff format --check .
+	@uv run pytest
