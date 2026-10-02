@@ -184,7 +184,7 @@ footer .navbar__link:hover {
 
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease-in-out, background-color 0.2s ease-in-out;
+  transition: opacity 0.25s ease-in-out, background-color 0.2s, transform 0.25s ease-in-out;
 
   z-index: 999;
 }
@@ -202,6 +202,7 @@ footer .navbar__link:hover {
 
 .scroll-to-top:active {
   background-color: var(--primary-color-dark);
+  transform: scale(125%);
 }
 
 .scroll-to-top:focus-visible {

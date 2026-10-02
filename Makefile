@@ -12,7 +12,7 @@ GLOBAL_DEPS 	:= $(CONTENT_DIR)/socials.yaml $(BASE_TEMPLATE) ./src/build.py
 BUILD_DIR   	:= ./build
 
 all: $(BUILD_DIR)/index.html $(BUILD_DIR)/about-me.html $(BUILD_DIR)/cv.html \
-		$(BUILD_DIR)/style.css
+		$(BUILD_DIR)/style.css $(BUILD_DIR)/app.js
 
 $(BUILD_DIR)/cv.html: $(CV_TEMPLATES) $(CV_CONTENT_DIR) $(GLOBAL_DEPS)
 	uv run build_cv
@@ -22,6 +22,9 @@ $(BUILD_DIR)/%.html: $(TEMPLATES_DIR)/%.html.jinja $(GLOBAL_DEPS)
 
 $(BUILD_DIR)/style.css: ./src/static/style.css.jinja $(CONTENT_DIR)/colors.yaml ./src/build.py
 	uv run build_css
+
+$(BUILD_DIR)/app.js: ./src/static/app.js
+	cp -f $< $@
 
 check:
 	@uvx ruff check .

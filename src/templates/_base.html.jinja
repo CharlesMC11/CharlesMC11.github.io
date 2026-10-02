@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet"/>
   <script src="https://kit.fontawesome.com/ebd1029440.js" crossorigin="anonymous" defer></script>
   <link rel="stylesheet" href="/style.css"/>
+  <script src="/app.js" defer></script>
   {% block head %}{% endblock head %}
 </head>
 
@@ -73,21 +74,10 @@
   </section>
 </footer>
 
-<a href="#brand" class="scroll-to-top" aria-label="Scroll to Top">
+<a href="#brand" class="scroll-to-top" aria-label="Scroll to Top" ontouchstart="">
   <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
 </a>
 
-<script>
-  const scrollBtn = document.querySelector('.scroll-to-top')
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollBtn.classList.add('visible');
-    } else {
-      scrollBtn.classList.remove('visible');
-    }
-  }, {passive: true});
-</script>
 </body>
 </html>
 
