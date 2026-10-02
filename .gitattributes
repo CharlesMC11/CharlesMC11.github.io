@@ -1,7 +1,8 @@
 *       text=auto
 
 *.css   text diff=css
-*.jinja text diff=html     linguist-language=django
+*.jinja text diff=html       linguist-language=django
+*.js    text diff=javascript
 *.md    text diff=markdown
 *.py    text diff=python
 *.yaml  text
