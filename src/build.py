@@ -136,13 +136,13 @@ def _build_colors(
     primary = Color(color_space, primary_coords)
 
     primary_dark = primary.clone()
-    primary_dark["l"] /= 1.25
+    primary_dark["l"] = max(0.1, primary_dark["l"] / 1.25)
 
     primary_light = primary.clone()
-    primary_light["l"] *= 3
+    primary_light["l"] = min(0.95, primary_light["l"] * 3)
 
     primary_transparent = primary.clone()
-    primary_transparent["alpha"] = 0.5
+    primary_transparent["alpha"] = 0.4
 
     secondary = Color(color_space, secondary_coords)
 
@@ -152,8 +152,7 @@ def _build_colors(
     tertiary = Color(color_space, tertiary_coords)
 
     tertiary_light = tertiary.clone()
-    tertiary_light["s"] /= 3
-    tertiary_light["l"] = 0.95
+    tertiary_light["l"] = min(0.95, tertiary_light["l"] * 1.125)
 
     return {
         "primary_color": primary,
