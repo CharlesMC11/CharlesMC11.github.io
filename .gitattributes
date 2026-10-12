@@ -1,11 +1,14 @@
 *       text=auto
 
-*.css   text diff=css
-*.jinja text diff=html       linguist-language=django
-*.js    text diff=javascript
 *.md    text diff=markdown
-*.py    text diff=python
-*.yaml  text
-*.yml   text
-
+*.yml   text eol=lf
+*.yaml  text eol=lf
 .git*   text
+
+*.css   text eol=lf diff=css
+*.jinja text eol=lf diff=html       linguist-language=django
+*.js    text eol=lf diff=javascript
+
+*.py    text eol=lf diff=python
+
+*.webp  binary

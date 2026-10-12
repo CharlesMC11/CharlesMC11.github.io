@@ -1,19 +1,24 @@
+.DS_Store
 .env
 
+/.git/
+
+/.idea/
+/.vscode/
+
+/build/
+
+/.ruff_cache/
+/.venv/
+
+/dist/
 *.egg-info/
-.ruff_cache/
-.venv/
+
 __pycache__/
 *.pyc
 
-build/
 *.jpeg
 *.jpg
 *.png
 *.sqlite3
 *.webp
-
-.idea/
-.vscode/
-
-.DS_Store
