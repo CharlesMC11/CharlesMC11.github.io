@@ -114,8 +114,8 @@
   roles: Developer, Maintainer
   start_date: 2025-05-05
   highlights:
-    - Engineered an event‐driven Zsh background daemon utilizing macOS launchd and ExifTool to automatically inject hardware and capture metadata into screenshots in real time
-    - Developed a custom Makefile build pipeline to statically bake system and script configurations into and compile the shell artifacts into Zsh word code, deployed to a transient RAM disk
+    - Engineered an event‐driven background daemon utilizing macOS FSEvents, launchd, and ExifTool to automatically inject hardware and capture metadata into screenshots in real time
+    - Uses kernel APIs such as posix_spawn, pipe, openat, writev, and handwritten assembly for minimal overhead, deployed to a transient RAM disk
 
 - name: File Organizer
   type: Automation Script
