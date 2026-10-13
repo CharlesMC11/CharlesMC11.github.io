@@ -115,7 +115,7 @@
   start_date: 2025-05-05
   highlights:
     - Engineered an event‐driven background daemon utilizing macOS FSEvents, launchd, and ExifTool to automatically inject hardware and capture metadata into screenshots in real time
-    - Uses kernel APIs such as posix_spawn, pipe, openat, writev, and handwritten assembly for minimal overhead, deployed to a transient RAM disk
+    - Uses libSystem APIs such as posix_spawn, pipe, openat, and writev, and handwritten A64 assembly for maximum performance
 
 - name: File Organizer
   type: Automation Script
