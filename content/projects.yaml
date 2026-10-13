@@ -100,13 +100,13 @@
   highlights:
     - Programmed dialogue and menu scripts in Ren'Py for a visual novel that won 1st place at the Spooktober 6th Annual Visual Novel Jam
 
-- name: CharlesMC11.github.io / resumake
-  type: Personal Website / Static Site Generator
+- name: CharlesMC11.github.io
+  type: Personal Website & Static Site Generator
   url: https://github.com/CharlesMC11/CharlesMC11.github.io.git
   roles: Developer, Maintainer
   start_date: 2024-09-24
   highlights:
-    - Engineered a lightweight static site generator utilizing Python, Jinja, and Make
+    - Engineered a lightweight static site generator utilizing Python, Jinja, and GNU Make
 
 - name: sst (Screenshot Tagger)
   type: Automation Utility
