@@ -1,14 +1,6 @@
 *            text=auto
 
-*.md         text diff=markdown
-*.yml        text eol=lf
-*.yaml       text eol=lf
-.git*        text
+*.css.jinja  diff=css  linguist-language=django
+*.html.jinja diff=html linguist-language=django
 
-*.css.jinja  text eol=lf diff=css        linguist-language=django
-*.html.jinja text eol=lf diff=html       linguist-language=django
-*.js         text eol=lf diff=javascript
-
-*.py         text eol=lf diff=python
-
-*.webp       binary
+uv.lock      generated
